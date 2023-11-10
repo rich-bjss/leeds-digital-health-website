@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-leedsdigitalhealth-dev-135428-authRole",
+      "UnauthRoleArn": "arn:aws:iam::718667457466:role/amplify-leedsdigitalhealth-dev-135428-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::718667457466:role/amplify-leedsdigitalhealth-dev-135428-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-leedsdigitalhealth-dev-135428-deployment",
+      "UnauthRoleName": "amplify-leedsdigitalhealth-dev-135428-unauthRole",
+      "StackName": "amplify-leedsdigitalhealth-dev-135428",
+      "StackId": "arn:aws:cloudformation:eu-west-2:718667457466:stack/amplify-leedsdigitalhealth-dev-135428/02a896c0-77f5-11ee-921b-06cad7eb0196",
+      "AmplifyAppId": "d37liuybwr0rcx"
+    }
+  }
+}

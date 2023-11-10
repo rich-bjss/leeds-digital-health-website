@@ -1,21 +1,48 @@
-import type { Config } from 'tailwindcss'
-import typography from '@tailwindcss/typography'
+import type { Config } from "tailwindcss"
+import typography from "@tailwindcss/typography"
+const defaultTheme = require("tailwindcss/defaultTheme")
+const tailwindMdBase = require("@geoffcodesthings/tailwind-md-base")
 
 export default {
   content: [
-    './app/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './lib/**/*.{ts,tsx}',
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}"
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['var(--font-inter)'],
+    markdownBase: {
+      wrapperClass: "content",
+      p: {
+        marginTop: 0,
+        marginBottom: defaultTheme.spacing[4]
       },
+      a: {
+        textDecoration: "none",
+        color: "#041E42",
+        fontWeight: "bold",
+        "&:hover": {
+          color: "#041E42",
+          textDecoration: "none",
+          fontWeight: "bold"
+        }
+      }
     },
+    extend: {
+      colors: {
+        pink: {
+          DEFAULT: "#D90699"
+        },
+        navy: {
+          DEFAULT: "#041E42"
+        }
+      },
+      fontFamily: {
+        sans: ["var(--font-inter)"]
+      }
+    }
   },
   future: {
-    hoverOnlyWhenSupported: true,
+    hoverOnlyWhenSupported: true
   },
-  plugins: [typography],
+  plugins: [typography, tailwindMdBase()]
 } satisfies Config

@@ -1,90 +1,60 @@
-import Link from 'next/link'
-import { draftMode } from 'next/headers'
+import { draftMode } from "next/headers"
 
-import Date from './date'
-import CoverImage from './cover-image'
-import Avatar from './avatar'
-import MoreStories from './more-stories'
+import CoverImage from "./cover-image"
+import html from "remark-html"
+import { remark } from "remark"
 
-import { getAllPosts } from '@/lib/api'
-import { CMS_NAME, CMS_URL } from '@/lib/constants'
+import { getHeroPost } from "@/lib/api/posts"
 
-function Intro() {
-  return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
-      </h1>
-      <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{' '}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          Next.js
-        </a>{' '}
-        and{' '}
-        <a
-          href={CMS_URL}
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          {CMS_NAME}
-        </a>
-        .
-      </h2>
-    </section>
-  )
-}
-
-function HeroPost({
+async function HeroPost({
   title,
   coverImage,
   date,
   excerpt,
   author,
-  slug,
+  content,
+  slug
 }: {
   title: string
   coverImage: any
   date: string
   excerpt: string
   author: any
+  content: string
   slug: string
 }) {
+  const processedContent = await remark().use(html).process(content)
+  const contentHtml = processedContent.toString()
+
   return (
     <section>
-      <div className="mb-8 md:mb-16">
-        <CoverImage title={title} slug={slug} url={coverImage.url} />
+      <div
+        className="w-full bg-center bg-cover h-96"
+        style={{
+          backgroundImage: `url(${coverImage.url}?w=1050&q=75)`,
+          backgroundPosition: `center 75%`
+        }}
+      >
+        <div className="flex items-center justify-center w-full h-full bg-white bg-opacity-30">
+          <div className="text-center"></div>
+        </div>
       </div>
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
-        <div>
-          <h3 className="mb-4 text-4xl lg:text-6xl leading-tight">
-            <Link href={`/posts/${slug}`} className="hover:underline">
-              {title}
-            </Link>
-          </h3>
-          <div className="mb-4 md:mb-0 text-lg">
-            <Date dateString={date} />
-          </div>
-        </div>
-        <div>
-          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          {author && <Avatar name={author.name} picture={author.picture} />}
-        </div>
+      <div className="container mx-auto">
+        <h1 className="text-6xl font-bold md:pt-8">{title}</h1>
+        <div
+          className="w-full p-4 md:w-full mt-8 mr-6 mb-8 text-navy bg-gray-100 content"
+          dangerouslySetInnerHTML={{ __html: contentHtml }}
+        />
       </div>
     </section>
   )
 }
 
 export default async function Page() {
-  const { isEnabled } = draftMode()
-  const allPosts = await getAllPosts(isEnabled)
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const heroPost = await getHeroPost()
 
   return (
-    <div className="container mx-auto px-5">
-      <Intro />
+    <div className="mx-auto">
       {heroPost && (
         <HeroPost
           title={heroPost.title}
@@ -92,10 +62,10 @@ export default async function Page() {
           date={heroPost.date}
           author={heroPost.author}
           slug={heroPost.slug}
+          content={heroPost.content}
           excerpt={heroPost.excerpt}
         />
       )}
-      <MoreStories morePosts={morePosts} />
     </div>
   )
 }

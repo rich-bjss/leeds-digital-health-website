@@ -1,54 +1,99 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import { EXAMPLE_PATH, CMS_NAME } from '@/lib/constants'
+import "./globals.css"
+import { Inter } from "next/font/google"
+import Link from "next/link"
+import { getPreviousEvents } from "@/lib/api/events"
+import { format } from "date-fns"
 
 export const metadata = {
-  title: `Next.js and ${CMS_NAME} Example`,
-  description: `This is a blog built with Next.js and ${CMS_NAME}.`,
+  title: `Leeds Digital Health`,
+  description: `Leeds Digital Health is a community initiative to bring together healthcare and technical professionals, recognising Leeds as a hub for healthcare and technology innovation.`
 }
 
 const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-  display: 'swap',
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap"
 })
 
-function Footer() {
+function Header() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="container mx-auto px-5">
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Built with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
+    <nav className="bg-white" role="navigation">
+      <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
+        <div className="mr-4 md:mr-8">
+          <Link href="/home">
+            <img
+              className="w-40"
+              src="/logo.svg"
+              alt="Leeds Digital Health Logo"
+            />
+          </Link>
+        </div>
+        <div className="ml-auto hidden">
+          <button
+            className="flex items-center px-3 py-2 border rounded"
+            type="button"
+          >
+            <svg
+              className="h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div className="w-full md:w-auto md:flex-grow md:flex md:items-center">
+          <ul className="flex flex-col mt-4 -mx-4 pt-4 md:flex-row md:items-center md:mx-0 md:mt-0 md:pt-0 md:mr-4 lg:mr-8 border-0"></ul>
+          <ul className="flex flex-col mt-4 -mx-4 pt-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 border-0"></ul>
         </div>
       </div>
-    </footer>
+    </nav>
+  )
+}
+
+async function Footer() {
+  const previousEvents = await getPreviousEvents()
+
+  if (previousEvents[0].errors) {
+    return ""
+  }
+  return (
+    <div className="bg-navy text-white" id="events">
+      <div className="container grid grid-cols-1 mx-auto py-10">
+        <h2 className="text-4xl font-bold mt-8 mb-8 text-pink">
+          Previous events
+        </h2>
+        {previousEvents.map((event) => (
+          <div className="border border-pink rounded p-4 pb-8 mb-4">
+            <h3 className="text-xl font-bold">
+              <p>{format(new Date(event.date), "do MMMM y")}</p>
+            </h3>
+            <div className="mb-8">
+              <p>{event.title}</p>
+            </div>
+            <Link
+              href={`/events/${event.slug}`}
+              className="bg-pink p-4 top-0 rounded"
+            >
+              Details here
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
   return (
     <html lang="en" className={inter.variable}>
       <body>
+        <Header />
         <section className="min-h-screen">
           <main>{children}</main>
           <Footer />
