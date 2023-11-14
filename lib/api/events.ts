@@ -20,12 +20,14 @@ const EVENT_GRAPHQL_FIELDS = `
         title
         description
         video
+        slug
         image {
             url
         }
         speakersCollection(limit: 5) {
           items {
             name
+            slug
             image {
               url
             }

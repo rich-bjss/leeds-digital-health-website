@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import Link from "next/link"
 import { getPreviousEvents } from "@/lib/api/events"
 import { format } from "date-fns"
+import Image from "next/image"
 
 export const metadata = {
   title: `Leeds Digital Health`,
@@ -21,7 +22,7 @@ function Header() {
       <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
         <div className="mr-4 md:mr-8">
           <Link href="/home">
-            <img
+            <Image
               className="w-40"
               src="/logo.svg"
               alt="Leeds Digital Health Logo"
@@ -65,7 +66,10 @@ async function Footer() {
           Previous events
         </h2>
         {previousEvents.map((event) => (
-          <div className="border border-pink rounded p-4 pb-8 mb-4">
+          <div
+            key={event.slug}
+            className="border border-pink rounded p-4 pb-8 mb-4"
+          >
             <h3 className="text-xl font-bold">
               <p>{format(new Date(event.date), "do MMMM y")}</p>
             </h3>

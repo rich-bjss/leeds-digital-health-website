@@ -1,6 +1,3 @@
-import { draftMode } from "next/headers"
-
-import CoverImage from "./cover-image"
 import html from "remark-html"
 import { remark } from "remark"
 

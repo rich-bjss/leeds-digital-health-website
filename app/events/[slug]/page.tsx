@@ -5,6 +5,7 @@ import MoreStories from "../../more-stories"
 import Avatar from "../../avatar"
 import Date from "../../date"
 import CoverImage from "../../cover-image"
+import Image from "next/image"
 
 import { Markdown } from "@/lib/markdown"
 import { getEvent } from "@/lib/api/events"
@@ -23,7 +24,6 @@ export default async function EventPage({
   params: { slug: string }
 }) {
   const { event } = await getEvent(params.slug)
-  console.log(event)
 
   return (
     <div className="container mx-auto px-5">
@@ -40,10 +40,16 @@ export default async function EventPage({
             </div>
             <div className="grid gap-8 lg:grid-cols-2">
               {event.talksCollection.items.map((talk: any) => (
-                <article className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+                <article
+                  key={talk.key}
+                  className="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+                >
                   <div className="flex justify-between items-center mb-5 text-gray-500">
                     {talk.video && (
-                      <span className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">
+                      <span
+                        key=""
+                        className="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+                      >
                         <svg
                           className="mr-1 w-3 h-3"
                           fill="currentColor"
@@ -65,9 +71,12 @@ export default async function EventPage({
                   </p>
                   <div className="flex justify-between items-center">
                     {talk.speakersCollection.items.map((speaker: any) => (
-                      <div className="flex items-center space-x-4">
+                      <div
+                        key={speaker.slug}
+                        className="flex items-center space-x-4"
+                      >
                         {speaker.image && (
-                          <img
+                          <Image
                             className="w-7 h-7 rounded-full"
                             src={`${speaker.image.url}?w=100`}
                             alt={`${speaker.name} avatar`}
