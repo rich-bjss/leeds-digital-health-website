@@ -24,6 +24,8 @@ function Header() {
           <Link href="/home">
             <Image
               className="w-40"
+              width="160"
+              height="120"
               src="/logo.svg"
               alt="Leeds Digital Health Logo"
             />
