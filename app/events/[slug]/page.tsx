@@ -76,11 +76,14 @@ export default async function EventPage({
                         className="flex items-center space-x-4"
                       >
                         {speaker.image && (
-                          <Image
-                            className="w-7 h-7 rounded-full"
-                            src={`${speaker.image.url}?w=100`}
-                            alt={`${speaker.name} avatar`}
-                          />
+                          <div className="w-7 h-7 relative">
+                            <Image
+                              className="rounded-full"
+                              src={`${speaker.image.url}?w=100`}
+                              alt={`${speaker.name} avatar`}
+                              fill={true}
+                            />
+                          </div>
                         )}
                         <span className="font-medium dark:text-white">
                           {speaker.name}

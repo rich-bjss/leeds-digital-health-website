@@ -62,7 +62,6 @@ export async function getHeroPost(): Promise<any> {
 }
 
 function extractPost(fetchResponse: any): any {
-  console.log(fetchResponse)
   return fetchResponse?.data?.postCollection?.items?.[0]
 }
 
