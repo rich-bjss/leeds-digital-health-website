@@ -8,15 +8,15 @@ import CoverImage from "../../cover-image"
 import Image from "next/image"
 
 import { Markdown } from "@/lib/markdown"
-import { getEvent } from "@/lib/api/events"
+import { getAllEvents, getEvent } from "@/lib/api/events"
 
-// export async function generateStaticParams() {
-//   const event = await getEvent()
+export async function generateStaticParams() {
+  const events = await getAllEvents()
 
-//   return allPosts.map((post) => ({
-//     slug: post.slug,
-//   }))
-// }
+  return events.map((event) => ({
+    slug: event.slug
+  }))
+}
 
 export default async function EventPage({
   params
