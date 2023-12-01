@@ -4,5 +4,6 @@ module.exports = {
     unoptimized: true,
     dangerouslyAllowSVG: true,
     formats: ["image/avif", "image/webp"]
-  }
+  },
+  output: "export"
 }
