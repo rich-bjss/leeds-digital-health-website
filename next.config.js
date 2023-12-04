@@ -5,5 +5,5 @@ module.exports = {
     dangerouslyAllowSVG: true,
     formats: ["image/avif", "image/webp"]
   },
-  output: "export"
+  output: "standalone"
 }
