@@ -69,7 +69,7 @@ export default async function EventPage({
                   <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
                     {talk.description}
                   </p>
-                  <div className="flex justify-between items-center">
+                  <div className="flex flex-col">
                     {talk.speakersCollection.items.map((speaker: any) => (
                       <div
                         key={speaker.slug}
