@@ -1,3 +1,4 @@
+import Post from "../model/post"
 import { fetchGraphQL } from "./api"
 
 const POST_GRAPHQL_FIELDS = `
@@ -44,7 +45,9 @@ export async function getAllPosts(isDraftMode: boolean): Promise<any[]> {
   return extractPostEntries(entries)
 }
 
-export async function getHeroPost(): Promise<any> {
+export async function getHeroPost(): Promise<Post | null> {
+  //TODO this here for dev styling purposes; delete this
+  await new Promise(resolve => setTimeout(resolve, 500))
   try {
     const entry = await fetchGraphQL(
       `query {
@@ -59,6 +62,7 @@ export async function getHeroPost(): Promise<any> {
   } catch (e) {
     console.log(e)
   }
+  return null
 }
 
 function extractPost(fetchResponse: any): any {

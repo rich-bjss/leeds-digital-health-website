@@ -38,6 +38,19 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-inter)"]
+      },
+      keyframes: {
+        loading: {
+          '0%': {
+            color: '#F490B6'
+          },
+          '50%': {
+            color: '#FCE7F3 '
+          },
+          '100%': {
+            color: '#F490B6 '
+          }
+        }
       }
     }
   },
