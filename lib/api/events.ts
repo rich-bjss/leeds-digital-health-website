@@ -54,6 +54,22 @@ export async function getEvent(slug: string): Promise<any> {
   }
 }
 
+export async function getUpcomingEvents(): Promise<any[]> {
+  const todaysDate = formatISO(new Date())
+
+  const entries = await fetchGraphQL(`
+    query {
+      eventsCollection(order: date_ASC, where: {date_gte:"${todaysDate}"}) {
+        items {
+          ${EVENT_LIST_GRAPHQL_FIELDS}
+        }
+      }
+    }
+  `)
+
+  return extractEvents(entries)
+}
+
 export async function getPreviousEvents(): Promise<any[]> {
   const todaysDate = formatISO(new Date())
 

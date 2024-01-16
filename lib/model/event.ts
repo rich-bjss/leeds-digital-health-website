@@ -6,7 +6,7 @@ export default interface Event {
     key: string;
     title: string;
     description: string;
-    date: Date;
+    date: string;
     talksCollection: { items: Talk[] };
     slides: any,
     image: { url: string},

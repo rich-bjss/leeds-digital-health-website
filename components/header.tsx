@@ -1,6 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import LinkButton from "./link-button"
+
 export default function Header() {
     return (
       <nav className="bg-white" role="navigation">
@@ -8,13 +10,17 @@ export default function Header() {
           <div className="mr-4 md:mr-8">
             <Link href="/">
               <Image
-                className="w-40"
+                priority
+                className="w-40 h-auto"
                 width="160"
                 height="120"
                 src="/logo.svg"
                 alt="Leeds Digital Health Logo"
               />
             </Link>
+          </div>
+          <div className="mx-16">
+            <LinkButton href="/#upcoming-events">Upcoming Events</LinkButton>
           </div>
           <div className="ml-auto hidden">
             <button

@@ -5,5 +5,14 @@ module.exports = {
     dangerouslyAllowSVG: true,
     formats: ["image/avif", "image/webp"]
   },
-  output: "standalone"
+  output: "standalone",
+  async redirects() {
+    return [
+      {
+        source: "/events",
+        destination: "/#upcoming-events",
+        permanent: false,
+      }
+    ]
+  }
 }
