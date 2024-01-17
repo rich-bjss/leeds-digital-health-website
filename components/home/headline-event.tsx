@@ -12,8 +12,6 @@ import { getHeadlineEvent } from "@/lib/api/events"
 async function DisplayHeadlineEvent() {
     const headlineEvent = await getHeadlineEvent();
 
-    console.log('headlineEvent:', headlineEvent);
-
     if (!headlineEvent) {
         return //display nothing if no headline event is set
     }
