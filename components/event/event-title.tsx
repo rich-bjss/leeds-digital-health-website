@@ -6,7 +6,7 @@ export default function EventTitle({ title, description }: { title: string, desc
       {title}
     </h2>
     <p className="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-      <MarkdownContent markdownString={description} />
+      <MarkdownContent markdownContent={description} />
     </p>
   </div>
 }
