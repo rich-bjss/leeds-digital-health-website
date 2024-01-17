@@ -20,7 +20,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="mx-16">
-            <LinkButton href="/#upcoming-events">Upcoming Events</LinkButton>
+            <LinkButton href="/#upcoming">Upcoming Events</LinkButton>
           </div>
           <div className="ml-auto hidden">
             <button

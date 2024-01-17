@@ -6,8 +6,10 @@ export default async function Page() {
   return (
     <div className="mx-auto">
       <HeroPost />
-      <HeadlineEvent />
-      <UpcomingEvents />
+      <section id="upcoming">
+        <HeadlineEvent />
+        <UpcomingEvents />
+      </section>
     </div>
   )
 }

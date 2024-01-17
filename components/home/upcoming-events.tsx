@@ -13,7 +13,7 @@ async function DisplayEvents() {
         return //display nothing if no events are upcoming
     }
 
-    return <section id="upcoming-events" className="mt-24 container mx-auto">
+    return <section id="other-upcoming-events" className="mt-24 container mx-auto">
         <h1 className="text-6xl font-bold ">Other Upcoming Events</h1>
         <div className="flex justify-center">
             <div>
