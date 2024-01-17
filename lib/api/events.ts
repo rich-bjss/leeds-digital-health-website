@@ -15,6 +15,7 @@ const EVENT_GRAPHQL_FIELDS = `
   description
   date
   slug
+  meetupEventId
   image {
     url
   }

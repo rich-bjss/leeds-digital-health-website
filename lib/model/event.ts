@@ -12,4 +12,5 @@ export default interface Event {
     image: { url: string},
     video: string;
     slug: string;
+    meetupEventId: string;
 }
