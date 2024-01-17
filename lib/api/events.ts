@@ -1,6 +1,8 @@
 import { format, formatISO } from "date-fns"
 import { fetchGraphQL } from "./api"
 
+import Event from "../model/event"
+
 const EVENT_LIST_GRAPHQL_FIELDS = `
   title
   description
@@ -10,6 +12,7 @@ const EVENT_LIST_GRAPHQL_FIELDS = `
 
 const EVENT_GRAPHQL_FIELDS = `
   title
+  description
   date
   slug
   image {
@@ -54,12 +57,31 @@ export async function getEvent(slug: string): Promise<any> {
   }
 }
 
+export async function getHeadlineEvent(): Promise<Event> {
+  const todaysDate = formatISO(new Date())
+
+    //TODO this here for dev styling purposes; delete this
+  // await new Promise(resolve => setTimeout(resolve, 5000))
+  
+  const entry = await fetchGraphQL(`
+    query {
+      eventsCollection(where: {headlineEvent: true}){
+        items {
+          ${EVENT_GRAPHQL_FIELDS}
+        }
+      }
+    }
+  `)
+
+  return extractEvent(entry)
+}
+
 export async function getUpcomingEvents(): Promise<any[]> {
   const todaysDate = formatISO(new Date())
 
   const entries = await fetchGraphQL(`
     query {
-      eventsCollection(order: date_ASC, where: {date_gte:"${todaysDate}"}) {
+      eventsCollection(order: date_ASC, where: {date_gte:"${todaysDate}", headlineEvent: false}) {
         items {
           ${EVENT_LIST_GRAPHQL_FIELDS}
         }

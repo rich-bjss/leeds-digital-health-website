@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Event from "@/lib/model/event";
-import LinkButton from "../link-button";
+import LinkButton from "../ui-elements/link-button";
 
 export default function EventCard({ event }: { event: Event }) {
 
