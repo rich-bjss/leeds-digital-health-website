@@ -2,10 +2,11 @@ import { Suspense } from "react"
 
 import LoadingMessage from "../ui-elements/loading-message";
 import MarkdownContent from "../ui-elements/markdown-content";
-
-import { getHeadlineEvent } from "@/lib/api/events"
 import LinkButton from "../ui-elements/link-button";
 import FeatureSection from "../ui-elements/feature-section";
+import DateComponent from "../ui-elements/date-component";
+
+import { getHeadlineEvent } from "@/lib/api/events"
 
 
 async function DisplayHeadlineEvent() {
@@ -30,6 +31,7 @@ async function DisplayHeadlineEvent() {
                 <span className="text-4xl text-center text-white font-semibold md:pt-8">{headlineEvent.title}</span>
             </div>
         </div>
+        <DateComponent className="text-white italic text-lg text-right w-max" dateString={headlineEvent.date} />
         <MarkdownContent markdownContent={headlineEvent.description} />
         <div className="flex justify-center">
             <LinkButton href={`/events/${headlineEvent.slug}`}><span className="text-2xl font-semibold">Find out more</span></LinkButton>
