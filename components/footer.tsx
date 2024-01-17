@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { getPreviousEvents } from "@/lib/api/events"
 import { Suspense } from "react"
-import LoadingMessage from "./loading-message"
+import LoadingMessage from "./ui-elements/loading-message"
 
 async function PreviousEvents() {
     const previousEvents = await getPreviousEvents()

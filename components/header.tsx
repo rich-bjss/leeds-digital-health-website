@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import LinkButton from "./link-button"
+import LinkButton from "./ui-elements/link-button"
 
 export default function Header() {
     return (
