@@ -31,7 +31,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
         {displayMeetupButton && (
             <div className="flex justify-center">
                 <LinkButton href={`https://www.meetup.com/leeds-digital-health/events/${event.meetupEventId}/`}>
-                    <span className="font-bold">Sign up for free here →</span>
+                    <span className="font-bold">Sign up for free →</span>
                 </LinkButton>
             </div>
         )}

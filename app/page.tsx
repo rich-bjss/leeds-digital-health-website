@@ -1,13 +1,13 @@
 import HeroPost from "@/components/home/hero-post"
-import HeadlineEvent from "@/components/home/headline-event"
-import UpcomingEvents from "@/components/home/upcoming-events"
+import HeadlineContent from "@/components/home/headline/headline-content"
+import UpcomingEvents from "@/components/home/upcoming/upcoming-events"
 
 export default async function Page() {
   return (
     <div className="mx-auto">
       <HeroPost />
       <section id="upcoming">
-        <HeadlineEvent />
+        <HeadlineContent />
         <UpcomingEvents />
       </section>
     </div>

@@ -1,6 +1,7 @@
 import Event from "@/lib/model/event";
-import LinkButton from "../ui-elements/link-button";
+import LinkButton from "../../ui-elements/link-button";
 import DateComponent from "@/components/ui-elements/date-component";
+import MarkdownContent from "@/components/ui-elements/markdown-content";
 
 export default function EventCard({ event }: { event: Event }) {
 
@@ -14,7 +15,7 @@ export default function EventCard({ event }: { event: Event }) {
             <DateComponent className="text-slate-800 italic text-xl" dateString={event.date}/>
         </div>
         <div className="mx-48 my-8">
-            <p>{event.description}</p>
+            <MarkdownContent markdownContent={event.description} />
         </div>
         <div className="flex justify-center">
             <LinkButton href={`/events/${event.slug}`}>Find out more</LinkButton>

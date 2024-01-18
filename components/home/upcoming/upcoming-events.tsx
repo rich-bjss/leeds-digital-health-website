@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import EventCard from "@/components/home/event-card";
+import EventCard from "@/components/home/upcoming/event-card";
 import LoadingMessage from "@/components/ui-elements/loading-message";
 
 import Event from "@/lib/model/event";

@@ -34,7 +34,6 @@ export default async function EventPage({
     <div className="container mx-auto p-5 min-h-40">
       <section className="bg-white dark:bg-gray-900 min-h-40">
         <EventDetails slug={params.slug} />
-        dfhsdfh
       </section>
     </div>
   )
