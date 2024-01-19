@@ -22,9 +22,7 @@ async function DisplayHeroPost() {
         backgroundPosition: `center 75%`
       }}
     >
-      <div className="flex items-center justify-center w-full h-full bg-white bg-opacity-30">
-        <div className="text-center"></div>
-      </div>
+      <div className="w-full h-full bg-white bg-opacity-30" />
     </div>
     <div className="container mx-auto">
       <h1 className="text-4xl font-bold md:pt-8">{heroPost.title}</h1>
