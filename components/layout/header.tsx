@@ -21,7 +21,7 @@ export default function Header() {
           </Link>
         </div>
         <MenuButton />
-        <div className="w-full md:w-auto md:flex md:flex md:items-center">
+        <div className="w-full md:w-auto md:flex md:items-center">
           <ul className="flex flex-col mt-4 -mx-4 pt-4 md:flex-row md:items-right md:mx-0 md:mt-0 md:pt-0 md:mr-4 lg:mr-8 border-0">
             <LinkButton href="/#upcoming">Upcoming Events</LinkButton>
           </ul>
