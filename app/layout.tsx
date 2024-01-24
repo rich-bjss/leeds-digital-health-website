@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body>
         <Header />
-        <section className="min-h-screen pt-24">
+        <section className="min-h-screen pt-32 sm:pt-24">
           <main>{children}</main>
           <Footer />
         </section>

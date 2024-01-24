@@ -14,7 +14,7 @@ export default function LinkButton({
   return (
     <Link
       className={cn(
-        "bg-pink px-8 py-4 rounded text-lg text-white",
+        "bg-pink rounded text-white",
         className ? className : ""
       )}
       href={href}

@@ -4,11 +4,30 @@ import MenuButton from "./menu-button"
 
 import LinkButton from "../ui-elements/buttons/link-button"
 
+import { cn } from "@/lib/tailwind-helper"
+
+export function NavLink({
+  href,
+  children
+}: {
+  href: string
+  children: React.ReactNode
+}) {
+  return (
+    <LinkButton
+      href={href}
+      className={cn("text-xs px-1 py-1 max-w-sm", "sm:px-4 sm:py-4 sm:text-lg")}
+    >
+      {children}
+    </LinkButton>
+  )
+}
+
 export default function Header() {
   return (
-    <nav className="bg-white fixed w-full h-22 z-10" role="navigation">
-      <div className="container mx-auto px-4 py-5 flex flex-wrap items-center md:flex-no-wrap">
-        <div className="mr-4 md:mr-8">
+    <nav className="bg-white fixed h-22 z-10 w-full" role="navigation">
+      <div className="container mx-auto py-2 px-4 sm:py-4 flex flex-wrap items-center md:flex-no-wrap">
+        <div className="mr-4 w-full sm:w-max flex justify-center">
           <Link href="/">
             <Image
               priority
@@ -21,12 +40,14 @@ export default function Header() {
           </Link>
         </div>
         <MenuButton />
-        <div className="w-full md:w-auto md:flex md:items-center">
-          <ul className="flex flex-col mt-4 -mx-4 pt-4 md:flex-row md:items-right md:mx-0 md:mt-0 md:pt-0 md:mr-4 lg:mr-8 border-0">
-            <LinkButton href="/#upcoming">Upcoming Events</LinkButton>
-          </ul>
-          <ul className="flex flex-col mt-4 -mx-4 pt-4 md:flex-row md:items-center md:mx-0 md:ml-auto md:mt-0 md:pt-0 border-0">
-            <LinkButton href="/committee">Making it Possible</LinkButton>
+        <div className="w-full sm:w-max">
+          <ul className="w-full flex justify-center mt-4 pt-0 sm:mt-0">
+            <li className="mx-4 sm:mx-8">
+              <NavLink href="/#upcoming">Upcoming Events</NavLink>
+            </li>
+            <li className="">
+              <NavLink href="/committee">Making it Possible</NavLink>
+            </li>
           </ul>
         </div>
       </div>
