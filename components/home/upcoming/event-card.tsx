@@ -1,5 +1,5 @@
 import Event from "@/lib/model/event";
-import LinkButton from "../../ui-elements/link-button";
+import LinkButton from "../../ui-elements/buttons/link-button";
 import DateComponent from "@/components/ui-elements/date-component";
 import MarkdownContent from "@/components/ui-elements/markdown-content";
 

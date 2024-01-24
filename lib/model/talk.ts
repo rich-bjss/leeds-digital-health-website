@@ -3,9 +3,10 @@ import Speaker from "./speaker";
 export default interface Talk{
     key: string;
     title: string;
-    //image
+    image: {url: string}
     speakersCollection: { items: Speaker[]};
-    //slides
+    slides: any
     video: string;
     description: string;
+    sys: {id: string}
 }

@@ -2,11 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import MenuButton from "./menu-button"
 
-import LinkButton from "../ui-elements/link-button"
+import LinkButton from "../ui-elements/buttons/link-button"
 
 export default function Header() {
   return (
-    <nav className="bg-white fixed w-full h-22 z-50" role="navigation">
+    <nav className="bg-white fixed w-full h-22 z-10" role="navigation">
       <div className="container mx-auto px-4 py-5 flex flex-wrap items-center md:flex-no-wrap">
         <div className="mr-4 md:mr-8">
           <Link href="/">

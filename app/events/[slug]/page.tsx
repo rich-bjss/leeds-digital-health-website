@@ -11,7 +11,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: {
+export async function generateMetadata({
+  params
+}: {
   params: {
     slug: string
   }
@@ -29,10 +31,15 @@ export default async function EventPage({
 }: {
   params: { slug: string }
 }) {
-  
+
   return (
     <div className="container mx-auto p-5 min-h-40">
-      <section className="bg-white dark:bg-gray-900 min-h-40">
+      <section
+        className={
+          "bg-white min-h-40"
+          //   + "dark:bg-gray-900"
+        }
+      >
         <EventDetails slug={params.slug} />
       </section>
     </div>

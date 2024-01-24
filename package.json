@@ -19,6 +19,7 @@
     "autoprefixer": "10.4.15",
     "contentful-import": "^9.0.4",
     "date-fns": "2.30.0",
+    "framer-motion": "^10.18.0",
     "next": "^14.1.0",
     "postcss": "^8.4.31",
     "react": "^18.2.0",

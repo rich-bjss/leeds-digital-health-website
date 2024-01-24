@@ -1,4 +1,4 @@
-import { format, formatISO } from "date-fns"
+import { formatISO } from "date-fns"
 import { fetchGraphQL } from "./api"
 
 import Event from "../model/event"
@@ -27,6 +27,9 @@ const EVENT_GRAPHQL_FIELDS = `
         image {
             url
         }
+        sys {
+            id
+        }
         speakersCollection(limit: 5) {
           items {
             name
@@ -40,7 +43,6 @@ const EVENT_GRAPHQL_FIELDS = `
 `
 
 export async function getEvent(slug: string): Promise<any> {
-
   //TODO this here for dev styling purposes; delete this
   //await new Promise(resolve => setTimeout(resolve, 500000))
 
@@ -95,7 +97,7 @@ export async function getUpcomingEvents(): Promise<Event[]> {
     }
   `)
 
-  const headlineEvents = await getHeadlineEvents();
+  const headlineEvents = await getHeadlineEvents()
   const remainingHeadlineEvents = headlineEvents.slice(1)
 
   let upcomingEvents = extractEvents(entries)

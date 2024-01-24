@@ -1,6 +1,6 @@
 import DateComponent from "@/components/ui-elements/date-component"
 import MarkdownContent from "@/components/ui-elements/markdown-content"
-import LinkButton from "@/components/ui-elements/link-button"
+import LinkButton from "@/components/ui-elements/buttons/link-button"
 import ContentfulImage from "@/components/ui-elements/contentful-image"
 
 import Event from "@/lib/model/event"

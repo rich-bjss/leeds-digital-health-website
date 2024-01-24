@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import LinkButton from '@/components/ui-elements/link-button'
+import LinkButton from '@/components/ui-elements/buttons/link-button'
 
 import imageSource from '@/public/TMP_FALLBACK_GRAPHIC.jpg'
 
