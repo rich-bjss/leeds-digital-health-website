@@ -27,7 +27,9 @@ export default function TalkCard({ talk }: { talk: Talk }) {
         {/* <span className="text-sm">14 days ago</span> */}
       </div>
       <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-        <AppendLink href={`talk/${talkId}`}>{talk.title}</AppendLink>
+        <AppendLink href={`talk/${talkId}`} scroll={false}>
+          {talk.title}
+        </AppendLink>
       </h2>
       <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
         {talk.description}

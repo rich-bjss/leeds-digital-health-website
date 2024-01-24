@@ -9,7 +9,8 @@ export default function AppendLink({
   ...props
 }: {
   href: string
-  children: React.ReactNode
+  children: React.ReactNode,
+  [key: string]: any
 }) {
   const currentPath = usePathname()
 
