@@ -17,7 +17,7 @@ async function DisplayEvents() {
         <h1 className="text-6xl font-bold ">Other Upcoming Events</h1>
         <div className="flex justify-center">
             <div>
-                {events.map(event => <EventCard key={event.key} event={event} />)}
+                {events.map(event => <EventCard key={event.slug} event={event} />)}
             </div>
         </div>
     </section>

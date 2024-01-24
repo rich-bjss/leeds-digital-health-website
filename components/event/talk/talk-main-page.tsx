@@ -22,8 +22,8 @@ export default function TalkMainPage({ talk }: { talk: Talk }) {
         </div>
         <MarkdownContent markdownContent={talk.description} />
         <ul className="list-none">
-          {talk.speakersCollection.items.map((speaker, i) => (
-            <li key={i}>
+          {talk.speakersCollection.items.map((speaker) => (
+            <li key={speaker.sys.id}>
               {speaker.name}
               SPEAKER IMAGE
             </li>

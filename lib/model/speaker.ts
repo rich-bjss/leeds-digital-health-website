@@ -5,4 +5,5 @@ export default interface Speaker {
     company: string;
     description: string;
     image: { url: string };
+    sys: { id: string };
 }

@@ -6,7 +6,7 @@ export default function Speakers({ speakersList }: { speakersList: Speaker[] }) 
     return <>
         {speakersList.map((speaker: Speaker) => (
             <div
-                key={speaker.key}
+                key={speaker.sys.id}
                 className="flex items-center space-x-4"
             >
                 {speaker.image && (

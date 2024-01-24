@@ -36,6 +36,9 @@ const EVENT_GRAPHQL_FIELDS = `
             image {
               url
             }
+            sys {
+              id
+            }
           }
         }
     }
