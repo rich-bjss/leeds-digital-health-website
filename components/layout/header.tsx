@@ -26,7 +26,7 @@ export function NavLink({
 export default function Header() {
   return (
     <nav className="bg-white fixed h-22 z-10 w-full" role="navigation">
-      <div className="container mx-auto py-2 px-4 sm:py-4 flex flex-wrap items-center md:flex-no-wrap">
+      <div className="container mx-auto py-2 px-2 sm:py-4 flex flex-wrap items-center">
         <div className="mr-4 w-full sm:w-max flex justify-center">
           <Link href="/">
             <Image
