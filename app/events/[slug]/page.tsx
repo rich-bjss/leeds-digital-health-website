@@ -33,7 +33,7 @@ export default async function EventPage({
 }) {
 
   return (
-    <div className="container mx-auto sm:px-5 min-h-40">
+    <div className="container mx-auto sm:px-5 min-h-40 pb-8">
       <section
         className={
           "bg-white min-h-40"
