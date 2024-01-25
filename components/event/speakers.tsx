@@ -2,6 +2,8 @@ import Image from "next/image"
 
 import Speaker from "@/lib/model/speaker"
 
+import { cn } from "@/lib/tailwind-helper"
+
 export default function Speakers({ speakersList }: { speakersList: Speaker[] }) {
     return <>
         {speakersList.map((speaker: Speaker) => (
@@ -19,7 +21,9 @@ export default function Speakers({ speakersList }: { speakersList: Speaker[] }) 
                         />
                     </div>
                 )}
-                <span className="font-medium dark:text-white">
+                <span className={cn("font-medium",
+                // "dark:text-white"
+                )}>
                     {speaker.name}
                 </span>
             </div>

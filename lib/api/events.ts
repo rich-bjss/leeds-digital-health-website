@@ -16,6 +16,14 @@ const EVENT_GRAPHQL_FIELDS = `
   date
   slug
   meetupEventId
+  video {
+    title
+    description
+    url
+  }
+  venue {
+    address
+  }
   image {
     url
   }
@@ -58,6 +66,7 @@ export async function getEvent(slug: string): Promise<any> {
       }
     }`
   )
+  
   return {
     event: extractEvent(entry)
   }

@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
 import { usePathname, redirect } from "next/navigation"
 
-export default function Default(){
-    redirect(usePathname().replace(/talk\/.*$/i, ''))
+export default function Default() {
+  redirect(usePathname().replace(/talk\/.*$/i, ""))
 }

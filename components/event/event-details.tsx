@@ -1,18 +1,19 @@
 import { Suspense } from "react"
 
+import formatDistance from "date-fns/formatDistance"
+
 import Talks from "./talks"
 import LinkButton from "../ui-elements/buttons/link-button"
 import MarkdownContent from "../ui-elements/markdown-content"
 import Event from "@/lib/model/event"
 import LoadingMessage from "../ui-elements/loading-message"
+import VideoPlayer from "../ui-elements/video/video-player"
+import DateComponent from "../ui-elements/date-component"
 
 import { cn, dark } from "@/lib/tailwind-helper"
 import { getEvent } from "@/lib/api/events"
+import { isFuture } from "../ui-elements/date-component"
 
-function eventIsFuture(dateString: string) {
-  const eventDate = new Date(dateString)
-  return eventDate > new Date()
-}
 
 async function DisplayEvent({ slug }: { slug: string }) {
   const { event }: { event: Event } = await getEvent(slug)
@@ -21,20 +22,39 @@ async function DisplayEvent({ slug }: { slug: string }) {
     return <p>No event found</p>
   }
 
-  const displayMeetupButton =
-    event.meetupEventId !== null && eventIsFuture(event.date)
+  const eventIsFuture = isFuture(event.date)
+
+  const displayMeetupButton = event.meetupEventId !== null && eventIsFuture
+
+  const dateDistance = formatDistance(new Date(event.date), new Date(), {
+    addSuffix: true
+  })
 
   return (
-    <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div className="sm:px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+      <div className="flex flex-wrap justify-center sm:min-h-1/2">
+        <div className="bg-white w-5/12 mb-4 text-right">
+          <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
+            {event.title}
+          </h1>
+        </div>
+        <div className="w-1/12"></div>
+        <div className="w-5/12 min-h-1/2 text-left">
+          <div className="flex font-light text-gray-500 ">
+            <div className="text-sm sm:text-lg pt-4">
+              <span className="uppercase">{!eventIsFuture && "PREVIOUSLY HOSTED"}</span>
+              <p className="text-sm sm:text-2xl text-gray-900 font-semibold">
+                <DateComponent dateString={event.date} />
+              </p>
+              <p className="text-right">{dateDistance}</p>
+              <p>{event.venue?.address}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="mx-auto ">
-        <h2
-          className={cn(
-            "mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900",
-            // dark("text-white")
-          )}
-        >
-          {event.title}
-        </h2>
+        {event.video && <VideoPlayer videoUrl={event.video.url} />}
+
         <MarkdownContent markdownContent={event.description} />
       </div>
       <Talks talkList={event.talksCollection.items} />
