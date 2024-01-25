@@ -7,19 +7,28 @@ import { cn } from "@/lib/tailwind-helper"
 export default function InteractiveCard({
   children,
   className,
+  href,
   appendHref
 }: {
   children: React.ReactNode
   className?: string
-  appendHref: string
+  href: string
+  appendHref?: boolean
 }) {
   const router = useRouter()
 
-  const newUrl = `${usePathname()}/${appendHref}`
+  console.log(usePathname())
+
+  const newUrl = appendHref ? `${usePathname()}/${href}` : href
+
+  console.log(newUrl)
 
   return (
-    <article className={cn("cursor-pointer",className ? className : "")} onClick={() => router.push(newUrl)}>
-        {children}
+    <article
+      className={cn("cursor-pointer", className ? className : "")}
+      onClick={() => router.push(newUrl)}
+    >
+      {children}
     </article>
   )
 }

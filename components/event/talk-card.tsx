@@ -12,7 +12,7 @@ export default function TalkCard({ talk }: { talk: Talk }) {
 
   return (
     <InteractiveCard
-      appendHref={talkHref}
+      href={talkHref} appendHref
       key={talkId}
       className={cn(
         "p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-slate-200 transition-colors"
