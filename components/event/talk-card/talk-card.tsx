@@ -1,6 +1,6 @@
-import Speakers from "./speakers"
-import InteractiveCard from "../ui-elements/interactive-card"
-import AppendLink from "../ui-elements/buttons/append-link"
+import TalkSpeakers from "./talk-speakers"
+import InteractiveCard from "../../ui-elements/interactive-card"
+import AppendLink from "../../ui-elements/buttons/append-link"
 import CameraImage from "@/components/graphics/camera-svg"
 import Talk from "@/lib/model/talk"
 import { cn } from "@/lib/tailwind-helper"
@@ -52,7 +52,7 @@ export default function TalkCard({ talk }: { talk: Talk }) {
         {talk.description}
       </p>
       <div className="flex flex-col">
-        <Speakers speakersList={talk.speakersCollection.items} />
+        <TalkSpeakers speakersList={talk.speakersCollection.items} />
       </div>
     </InteractiveCard>
   )

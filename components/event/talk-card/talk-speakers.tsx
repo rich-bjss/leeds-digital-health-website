@@ -4,7 +4,7 @@ import Speaker from "@/lib/model/speaker"
 
 import { cn } from "@/lib/tailwind-helper"
 
-export default function Speakers({ speakersList }: { speakersList: Speaker[] }) {
+export default function TalkSpeakers({ speakersList }: { speakersList: Speaker[] }) {
     return <>
         {speakersList.map((speaker: Speaker) => (
             <div

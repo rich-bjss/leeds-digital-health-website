@@ -2,7 +2,7 @@ import { Suspense } from "react"
 
 import formatDistance from "date-fns/formatDistance"
 
-import Talks from "./talks"
+import Talks from "./talk-card/talks"
 import LinkButton from "../ui-elements/buttons/link-button"
 import MarkdownContent from "../ui-elements/markdown-content"
 import Event from "@/lib/model/event"
