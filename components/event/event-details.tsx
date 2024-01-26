@@ -65,7 +65,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
         />
       </div>
       <EventSpeakers event={event} />
-      <div className="px-8 pt-8">
+      <div className="px-1 sm:px-8 pt-8">
         <Talks talkList={event.talksCollection.items} />
       </div>
       {displayMeetupButton && (

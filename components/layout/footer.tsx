@@ -42,7 +42,7 @@ export default async function Footer() {
     return (
         <div className="bg-navy text-white" id="events">
             <div className="container grid grid-cols-1 mx-auto py-10">
-                <h2 className="text-4xl font-bold mt-8 mb-8 text-pink">
+                <h2 className="text-4xl font-bold mt-8 mb-8 text-pink text-center sm:text-left">
                     Previous events
                 </h2>
                 <Suspense fallback={<LoadingMessage>Loading events...</LoadingMessage>}>

@@ -61,7 +61,7 @@ export default function EventSpeakers({ event }: { event: Event }) {
             style={{ objectFit: "cover", objectPosition: "50% 50%" }}
           />
           <MarkdownContent
-            className="w-full"
+            className="w-full pt-2 sm:pt-0 content"
             markdownContent={speaker.description}
           />
         </article>
