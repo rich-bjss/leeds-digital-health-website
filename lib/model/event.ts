@@ -7,7 +7,7 @@ export default interface Event {
   date: string
   talksCollection: { items: Talk[] }
   slides: any
-  image: { url: string }
+  image: { description: string; url: string }
   video: { title: string; description: string; url: string }
   slug: string
   meetupEventId: string

@@ -11,7 +11,7 @@ export default function HeadlineEvent({ event }: { event: Event }) {
       <div className="w-full h-screen flex justify-center relative">
         <ContentfulImage
           src={event.image.url}
-          alt="Headline Event"
+          alt={event.image.description}
           fill
           style={{ objectFit: "contain" }}
         />

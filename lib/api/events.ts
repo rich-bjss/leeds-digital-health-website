@@ -25,30 +25,32 @@ const EVENT_GRAPHQL_FIELDS = `
     address
   }
   image {
+    description
     url
   }
   talksCollection(limit: 5) {
     items {
-        title
+      title
+      description
+      video
+      image {
         description
-        video
-        image {
+        url
+      }
+      sys {
+        id
+      }
+      speakersCollection(limit: 5) {
+        items {
+          name
+          image {
             url
-        }
-        sys {
+          }
+          sys {
             id
-        }
-        speakersCollection(limit: 5) {
-          items {
-            name
-            image {
-              url
-            }
-            sys {
-              id
-            }
           }
         }
+      }
     }
   }
 `
