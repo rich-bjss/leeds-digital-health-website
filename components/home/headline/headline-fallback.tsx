@@ -3,7 +3,7 @@ import LinkButton from "@/components/ui-elements/buttons/link-button"
 
 import imageSource from "@/public/TMP_FALLBACK_GRAPHIC.jpg"
 
-export default function () {
+export default function HeadlineFallback() {
   return (
     <>
       <div className="w-full h-96 flex justify-center relative">
