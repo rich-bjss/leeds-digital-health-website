@@ -33,7 +33,10 @@ export default function HeadlineEvent({ event }: { event: Event }) {
           className="text-white italic text-lg"
           dateString={event.date}
         />
-        <MarkdownContent markdownContent={event.description} />
+        <MarkdownContent
+          className="w-full p-4 text-navy bg-gray-100 content text-center rounded my-8"
+          markdownContent={event.description}
+        />
         <div className="flex justify-center">
           <LinkButton
             href={`/events/${event.slug}`}

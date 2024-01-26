@@ -31,17 +31,16 @@ export default async function EventPage({
 }: {
   params: { slug: string }
 }) {
-
   return (
-    <div className="container mx-auto sm:px-5 min-h-40 pb-8">
-      <section
+    <div className="min-h-40 mb-16">
+      <div
         className={
           "bg-white min-h-40"
           //   + "dark:bg-gray-900"
         }
       >
         <EventDetails slug={params.slug} />
-      </section>
+      </div>
     </div>
   )
 }

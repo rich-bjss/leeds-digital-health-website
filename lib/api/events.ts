@@ -43,6 +43,9 @@ const EVENT_GRAPHQL_FIELDS = `
       speakersCollection(limit: 5) {
         items {
           name
+          jobTitle
+          company
+          description
           image {
             url
           }

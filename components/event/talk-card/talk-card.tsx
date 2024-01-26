@@ -2,7 +2,10 @@ import TalkSpeakers from "./talk-speakers"
 import InteractiveCard from "../../ui-elements/interactive-card"
 import AppendLink from "../../ui-elements/buttons/append-link"
 import CameraImage from "@/components/graphics/camera-svg"
+import MarkdownContent from "@/components/ui-elements/markdown-content"
+
 import Talk from "@/lib/model/talk"
+
 import { cn } from "@/lib/tailwind-helper"
 
 export default function TalkCard({ talk }: { talk: Talk }) {
@@ -15,7 +18,7 @@ export default function TalkCard({ talk }: { talk: Talk }) {
       href={talkHref} appendHref
       key={talkId}
       className={cn(
-        "p-6 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-slate-200 transition-colors"
+        "p-6 bg-white rounded-lg border border-gray-200 shadow-lg hover:bg-slate-100 transition-colors text-navy"
         // "dark:bg-gray-800 dark:border-gray-700"
       )}
     >
@@ -43,14 +46,7 @@ export default function TalkCard({ talk }: { talk: Talk }) {
           {talk.title}
         </AppendLink>
       </h2>
-      <p
-        className={cn(
-          "mb-5 font-light text-gray-500"
-          // "dark:text-gray-400"
-        )}
-      >
-        {talk.description}
-      </p>
+      <MarkdownContent markdownContent={talk.description} />
       <div className="flex flex-col">
         <TalkSpeakers speakersList={talk.speakersCollection.items} />
       </div>
