@@ -28,11 +28,18 @@ export default function TalkMainPage({ talk }: { talk: Talk }) {
           markdownContent={talk.description}
           className="bg-slate-100 rounded-lg overflow-y-auto text-center text-sm sm:text-base max-h-96 sm:max-h-72 opacity-70 mt-4 pt-2 pb-4"
         />
-        <ul className="list-none mt-8">
+        <ul className="list-none mt-8 flex flex-auto bg-navy p-2 rounded-lg opacity-90 pb-6 mr-4 max-h-52 overflow-y-auto">
           {talk.speakersCollection.items.map((speaker) => (
-            <li key={speaker.sys.id}>
-              {speaker.name}
-              SPEAKER IMAGE
+            <li key={speaker.sys.id} className="bg-navy">
+              <p className="text-white text-left font-semibold pb-2 text-lg">{speaker.name}</p>
+              <Image
+                className="w-32 h-32 float-none border-2 mr-4 shadow-slate-300 shadow-[0_0_15px_1px]"
+                src={speaker.image?.url}
+                alt={speaker.name}
+                width={160}
+                height={160}
+                style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+              />
             </li>
           ))}
         </ul>
