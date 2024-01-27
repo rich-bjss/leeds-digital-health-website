@@ -26,9 +26,9 @@ export default function TalkMainPage({ talk }: { talk: Talk }) {
         </div>
         <MarkdownContent
           markdownContent={talk.description}
-          className="max-h-96 overflow-y-auto text-sm sm:text-base sm:max-h-72 opacity-90"
+          className="bg-slate-100 rounded-lg overflow-y-auto text-center text-sm sm:text-base max-h-96 sm:max-h-72 opacity-70 mt-4 pt-2 pb-4"
         />
-        <ul className="list-none">
+        <ul className="list-none mt-8">
           {talk.speakersCollection.items.map((speaker) => (
             <li key={speaker.sys.id}>
               {speaker.name}

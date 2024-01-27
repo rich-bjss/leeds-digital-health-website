@@ -15,7 +15,7 @@ export default async function MarkdownContent({
   
   return (
     <div
-      className={cn( '',
+      className={cn( 'content',
         className ? className : ''
       )}
       dangerouslySetInnerHTML={{ __html: htmlContent }}
