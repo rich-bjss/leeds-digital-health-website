@@ -35,6 +35,9 @@ function getEventSpeakerList(event: Event) {
 export default function EventSpeakers({ event }: { event: Event }) {
   const speakers = getEventSpeakerList(event)
 
+  if (!speakers)
+    return null
+  
   return (
     <section
       id="speakers"
