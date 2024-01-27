@@ -4,13 +4,17 @@ import MarkdownContent from "../ui-elements/markdown-content"
 
 import Event from "@/lib/model/event"
 import { cn } from "@/lib/tailwind-helper"
+import Speaker from "@/lib/model/speaker"
 
 function getEventSpeakerList(event: Event) {
   const speakerLists = event.talksCollection.items.map(
     (talk) => talk.speakersCollection.items
   )
 
-  const firstSpeakerList = speakerLists[0]
+  if(!speakerLists)
+    return null;
+
+  const firstSpeakerList: Speaker[]= speakerLists[0] ? speakerLists[0]: []
   const otherSpeakerLists = speakerLists.slice(1)
 
   const mergedList = [...firstSpeakerList]
