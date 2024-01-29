@@ -14,12 +14,12 @@ export function NavLink({
   children: React.ReactNode
 }) {
   return (
-    <LinkButton
+    <Link
       href={href}
-      className={cn("text-xs px-1 py-1 max-w-sm", "sm:px-4 sm:py-4 sm:text-lg")}
+      className={cn("text-xs px-4 py-2 max-w-sm  sm:text-base border-2 font-bold border-navy bg-white rounded text-navy hover:bg-blue-50")}
     >
       {children}
-    </LinkButton>
+    </Link>
   )
 }
 
@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <nav className="bg-white fixed h-22 z-10 w-full" role="navigation">
       <div className="container mx-auto py-2 px-2 sm:py-4 flex flex-wrap items-center">
-        <div className="mr-4 w-full sm:w-max flex justify-center">
+        <div className="mr-12 w-full sm:w-max flex justify-center">
           <Link href="/">
             <Image
               priority
