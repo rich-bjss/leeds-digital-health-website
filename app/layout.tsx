@@ -3,7 +3,6 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 
 import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
 
 export const metadata = {
   title: `Leeds Digital Health`,
@@ -27,7 +26,6 @@ export default function RootLayout({
         <Header />
         <section className="min-h-screen pt-32 sm:pt-24">
           <main>{children}</main>
-          <Footer />
         </section>
       </body>
     </html>
