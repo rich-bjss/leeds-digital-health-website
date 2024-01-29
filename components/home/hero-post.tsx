@@ -27,11 +27,11 @@ async function DisplayHeroPost() {
         <div className="w-full h-full bg-white bg-opacity-30" />
       </div>
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold py-4 md:pt-8 text-right sm:text-left">
+        <h1 className="text-4xl font-bold py-4 md:pt-8 text-right mr-2 sm:mr-0 sm:text-left text-navy">
           {heroPost.title}
         </h1>
         <MarkdownContent
-          className="w-full p-4 text-navy bg-gray-100 content text-center rounded mb-8"
+          className="w-full p-4 text-navy bg-gray-100 content text-center rounded mb-8 text-sm sm:text-base"
           markdownContent={heroPost.content}
         />
       </div>

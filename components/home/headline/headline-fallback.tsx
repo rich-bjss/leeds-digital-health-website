@@ -14,27 +14,31 @@ export default function HeadlineFallback() {
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div className="flex justify-center py-8">
-        <div className="w-96 align-middle mx-16">
-          <p className="text-3xl text-white font-bold text-right ">
-            At the heart of Digital Healthcare Technology in Leeds
-          </p>
-        </div>
-        <div className="">
-          <div className="container mx-auto mb-2">
-            <p className="text-white text-2xl font-bold border-b pb-2">
-              Keep up-to-date with our latest events
-            </p>
-          </div>
-          <div className="container mx-auto pt-4">
-            <LinkButton
-              href="https://www.meetup.com/leeds-digital-health/join/"
-              className="px-8 py-4 text-lg"
-            >
-              Sign up for free →
-            </LinkButton>
+      <div className="flex justify-center">
+        <div className="w-10/12 sm:w-8/12">
+          <div className="grid grid-cols-2 gap-8 sm:gap-16 py-8">
+            <div>
+              <h1 className="text-base sm:text-3xl text-white font-bold text-right ">
+                At the heart of Digital Healthcare Technology in Leeds
+              </h1>
+            </div>
+            <div className="">
+              <div className="mx-auto mb-2">
+                <p className="text-white text-base sm:text-3xl font-bold pb-2 text-left">
+                  Keep up-to-date with our latest events
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center">
+        <LinkButton
+          href="https://www.meetup.com/leeds-digital-health/join/"
+          className="px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-lg"
+        >
+          Join us on Meetup &rarr;
+        </LinkButton>
       </div>
     </>
   )

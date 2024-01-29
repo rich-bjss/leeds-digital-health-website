@@ -4,8 +4,6 @@ import LoadingMessage from "../../ui-elements/loading-message";
 import HeadlineEvent from "./headline-event";
 
 import { getHeadlineEvent } from "@/lib/api/events"
-import ContentfulImage from "@/components/ui-elements/contentful-image";
-import Image from "next/image";
 import HeadlineFallback from "./headline-fallback";
 
 async function DisplayHeadlineContent() {
@@ -13,7 +11,7 @@ async function DisplayHeadlineContent() {
 
     const imageUrl = headlineEvent?.image.url
 
-    return <section id="headline" className="bg-navy py-16">
+    return <section id="headline" className="bg-navy py-8">
         {
             headlineEvent
                 ? <HeadlineEvent event={headlineEvent} />
