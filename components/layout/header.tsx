@@ -42,9 +42,6 @@ export default function Header() {
         <MenuButton />
         <div className="w-full sm:w-max">
           <ul className="w-full flex justify-center mt-4 pt-0 sm:mt-0">
-            <li className="mx-4 sm:mx-8">
-              <NavLink href="/#upcoming">Upcoming Events</NavLink>
-            </li>
             <li className="">
               <NavLink href="/committee">Making it Possible</NavLink>
             </li>

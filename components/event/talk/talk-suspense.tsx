@@ -31,9 +31,6 @@ async function DisplayTalk({
         currentPage="details"
         videoExists={talk?.video ? true : false}
       />
-      <h1 className="text-center font-bold text-2xl sm:text-4xl">
-        {talk.title}
-      </h1>
       <TalkMainPage talk={talk} />
     </div>
   )
