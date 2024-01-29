@@ -2,10 +2,8 @@ import { Suspense } from "react"
 import { getEvent } from "@/lib/api/events"
 import Event from "@/lib/model/event"
 import LoadingMessage from "../../ui-elements/loading-message"
-import EmbeddedVideo from "../../ui-elements/embedded-video"
-import TabbedSection from "../../ui-elements/tabs/tabbed-section"
-import { TabPage } from "../../ui-elements/tabs/tabbed-section"
 import TalkMainPage from "./talk-main-page"
+import TalkNav from "./talk-nav"
 
 async function DisplayTalk({
   talkId,
@@ -14,7 +12,6 @@ async function DisplayTalk({
   talkId: string
   eventSlug: string
 }) {
-
   //looks inefficient, but Next.js should cache this fetch, so this is more efficient
   //than selecting the talk directly
   const { event }: { event: Event } = await getEvent(eventSlug)
@@ -26,23 +23,23 @@ async function DisplayTalk({
     return <h1>No talk details to display</h1>
   }
 
-  const tabPages: TabPage[] = []
-
-  tabPages[0] = {
-    tabName: "Talk Details",
-    page: <TalkMainPage talk={talk} />
-  }
-
-  if (talk.video)
-    tabPages.push({
-      tabName: "Video",
-      page: <EmbeddedVideo url={talk.video} />
-    })
-
-  return <TabbedSection pages={tabPages} />
+  return (
+    <div>
+      <TalkNav
+        eventSlug={eventSlug}
+        talkId={talkId}
+        currentPage="details"
+        videoExists={talk?.video ? true : false}
+      />
+      <h1 className="text-center font-bold text-2xl sm:text-4xl">
+        {talk.title}
+      </h1>
+      <TalkMainPage talk={talk} />
+    </div>
+  )
 }
 
-export default function TalkDetails({
+export default function TalkSuspense({
   talkId,
   eventSlug
 }: {
@@ -50,10 +47,12 @@ export default function TalkDetails({
   eventSlug: string
 }) {
   return (
-    <Suspense
-      fallback={<LoadingMessage>Loading talk details...</LoadingMessage>}
-    >
-      <DisplayTalk eventSlug={eventSlug} talkId={talkId} />
-    </Suspense>
+    <div className="pys-8">
+      <Suspense
+        fallback={<LoadingMessage>Loading talk details...</LoadingMessage>}
+      >
+        <DisplayTalk eventSlug={eventSlug} talkId={talkId} />
+      </Suspense>
+    </div>
   )
 }

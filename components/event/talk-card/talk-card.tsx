@@ -19,21 +19,21 @@ export default function TalkCard({ talk }: { talk: Talk }) {
       appendHref
       key={talkId}
       className={cn(
-        "p-3 sm:p6 bg-white rounded-lg border border-gray-200 shadow-lg hover:bg-slate-100 transition-colors text-navy"
+        "p-3 sm:p6 bg-white rounded-lg border border-gray-200 shadow-lg hover:bg-slate-100 transition-colors text-navy cursor-pointer"
         // "dark:bg-gray-800 dark:border-gray-700"
       )}
     >
       <div className="flex justify-between items-center mb-5 text-gray-500">
         {talk.video && (
-          <span
+          <AppendLink href={`${talkHref}/video`}
             className={cn(
               "bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded"
               // "dark:bg-primary-200 dark:text-primary-800"
             )}
           >
             <CameraImage />
-            Video
-          </span>
+            Video &rarr;
+          </AppendLink>
         )}
         {/* <span className="text-sm">14 days ago</span> */}
       </div>

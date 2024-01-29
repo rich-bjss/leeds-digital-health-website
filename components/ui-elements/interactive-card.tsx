@@ -23,7 +23,7 @@ export default function InteractiveCard({
 
   return (
     <article
-      className={cn("cursor-pointer", className ? className : "")}
+      className={cn("", className ? className : "")}
       onClick={() => router.push(newUrl)}
     >
       {children}

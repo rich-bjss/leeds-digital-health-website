@@ -3,7 +3,6 @@ import { Suspense } from "react"
 import formatDistance from "date-fns/formatDistance"
 
 import Talks from "./talk-card/talks"
-import EventSpeakers from "./event-speakers"
 import LinkButton from "../ui-elements/buttons/link-button"
 import MarkdownContent from "../ui-elements/markdown-content"
 import LoadingMessage from "../ui-elements/loading-message"
@@ -64,12 +63,11 @@ async function DisplayEvent({ slug }: { slug: string }) {
           markdownContent={event.description}
         />
       </div>
-      <EventSpeakers event={event} />
-      <div className="px-1 sm:px-8 pt-8">
+      <div className="px-1 sm:px-8">
         <Talks talkList={event.talksCollection.items} />
       </div>
       {displayMeetupButton && (
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-8">
           <LinkButton
             className="font-bold px-8 py-4 text-xl"
             href={`https://www.meetup.com/leeds-digital-health/events/${event.meetupEventId}/`}
