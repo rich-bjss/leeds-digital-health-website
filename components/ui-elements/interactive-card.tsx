@@ -17,11 +17,9 @@ export default function InteractiveCard({
 }) {
   const router = useRouter()
 
-  console.log(usePathname())
+  const pathName = usePathname()
 
-  const newUrl = appendHref ? `${usePathname()}/${href}` : href
-
-  console.log(newUrl)
+  const newUrl = appendHref ? `${pathName}/${href}` : href
 
   return (
     <article
