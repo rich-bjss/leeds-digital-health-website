@@ -9,9 +9,7 @@ import HeadlineFallback from "./headline-fallback";
 async function DisplayHeadlineContent() {
     const headlineEvent = await getHeadlineEvent();
 
-    const imageUrl = headlineEvent?.image.url
-
-    return <section id="headline" className="bg-navy py-8">
+    return <section id="headline" className="bg-navy pb-8">
         {
             headlineEvent
                 ? <HeadlineEvent event={headlineEvent} />

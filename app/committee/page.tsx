@@ -12,7 +12,7 @@ async function DisplaySponsors() {
   return (
     <section id="committee" className="h-fit w-screen">
       <div className="top-5 min-h-fit w-screen mb-12">
-        <h1 className="w-full text-center text-2xl sm:text-6xl font-bold text-navy">
+        <h1 className="w-full text-center text-2xl sm:text-4xl font-bold text-gray-500">
           The Leeds Digital Health Committee
         </h1>
         <div className="w-full flex justify-center mt-16">

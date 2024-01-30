@@ -57,12 +57,14 @@ async function DisplayEvent({ slug }: { slug: string }) {
         </div>
         {event.video && <VideoPlayer videoUrl={event.video.url} />}
       </div>
-      <div className="my-8 lg:px-32 md:px-16 sm:px-4 lg:my-16">
-        <MarkdownContent
-          className="w-full p-4 text-navy bg-gray-100 content text-center rounded"
-          markdownContent={event.description}
-        />
-      </div>
+      {event.description && (
+        <div className="my-8 lg:px-32 md:px-16 sm:px-4 lg:my-16">
+          <MarkdownContent
+            className="w-full p-4 text-navy bg-gray-100 content text-center rounded"
+            markdownContent={event.description}
+          />
+        </div>
+      )}
       <div className="px-1 sm:px-8">
         <Talks talkList={event.talksCollection.items} />
       </div>

@@ -6,11 +6,9 @@ import Footer from "@/components/layout/footer"
 export default async function Page() {
   return (
     <div className="mx-auto">
+      <HeadlineContent />
       <HeroPost />
-      <section id="upcoming">
-        <HeadlineContent />
-        <UpcomingEvents />
-      </section>
+      <UpcomingEvents />
       <Footer />
     </div>
   )

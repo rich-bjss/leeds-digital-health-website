@@ -2,8 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import MenuButton from "./menu-button"
 
-import LinkButton from "../ui-elements/buttons/link-button"
-
 import { cn } from "@/lib/tailwind-helper"
 
 export function NavLink({
@@ -16,7 +14,10 @@ export function NavLink({
   return (
     <Link
       href={href}
-      className={cn("text-xs px-4 py-2 sm:text-base border-2 font-bold border-navy bg-white rounded text-navy hover:bg-blue-50")}
+      className={cn(
+        "text-xs px-4 py-2 sm:text-lg font-bold bg-white text-navy",
+        "hover:text-blue-700 hover:border-b-2 border-blue-700"
+      )}
     >
       {children}
     </Link>
@@ -42,11 +43,11 @@ export default function Header() {
         <MenuButton />
         <div className="w-full sm:w-max">
           <ul className="w-full flex justify-center mt-4 pt-0 sm:mt-0">
-            <li className="pr-2 sm:pr-8">
+            <li className="">
               <NavLink href="/news">News</NavLink>
             </li>
-            <li className="pr-2 sm:pr-8">
-              <NavLink href="/committee">Making it Possible</NavLink>
+            <li className="">
+              <NavLink href="/committee">LDH Committee</NavLink>
             </li>
           </ul>
         </div>

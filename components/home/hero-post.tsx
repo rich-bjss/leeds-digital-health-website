@@ -17,7 +17,9 @@ async function DisplayHeroPost() {
   }
 
   return (
-    <BlogPost post={heroPost} sectionId="about" />
+    <div className="pt-16">
+      <BlogPost post={heroPost} sectionId="about" />
+    </div>
   )
 }
 

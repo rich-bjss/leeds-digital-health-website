@@ -10,11 +10,14 @@ export default function TalkMainPage({ talk }: { talk: Talk }) {
       <h1 className="text-center font-bold text-2xl sm:text-4xl text-navy">
         {talk.title}
       </h1>
+
       <div className="top-20 sm:top-32 left-0 px-8 sm:px-24 w-full">
-        <MarkdownContent
-          markdownContent={talk.description}
-          className="bg-slate-100 rounded-lg overflow-y-auto text-sm sm:text-base max-h-96 sm:max-h-72 mt-8 p-2 text-navy"
-        />
+        {talk.description && (
+          <MarkdownContent
+            markdownContent={talk.description}
+            className="bg-slate-100 rounded-lg overflow-y-auto text-sm sm:text-base max-h-96 sm:max-h-72 mt-8 p-2 text-navy"
+          />
+        )}
         <Speakers speakerList={talk.speakersCollection.items} />
       </div>
     </div>
