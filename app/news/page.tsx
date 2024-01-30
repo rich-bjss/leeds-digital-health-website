@@ -11,7 +11,7 @@ async function DisplayNews() {
   if (!posts || posts.length === 0)
     return (
       <div>
-        <h2 className="mb-8 text-6xl ml-2 md:text-6xl font-bold tracking-tighter leading-tight text-navy">
+        <h2 className="mb-8 text-4xl ml-2 md:text-4xl font-bold tracking-tighter leading-tight text-navy">
           News
         </h2>
         <div className="">
