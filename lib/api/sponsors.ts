@@ -9,6 +9,9 @@ const sponsorQuery = `query {
                 url
                 description
           }
+          sys {
+            id
+          }
         }
       }
     }`

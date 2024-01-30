@@ -18,7 +18,7 @@ async function DisplaySponsors() {
         <div className="w-full flex justify-center mt-16">
           <ul className="list-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {sponsors.map((sponsor) => (
-              <li className="mx-auto">
+              <li key={sponsor.sys.id} className="mx-auto">
                 <Image
                   src={sponsor.logo.url}
                   alt={sponsor.name}

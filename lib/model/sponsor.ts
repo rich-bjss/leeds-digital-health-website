@@ -4,4 +4,7 @@ export default interface Sponsor {
     url: string
     description: string
   }
+  sys: {
+    id: string
+  }
 }
