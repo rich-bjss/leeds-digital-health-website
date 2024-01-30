@@ -44,7 +44,7 @@ export default function HeadlineEvent({ event }: { event: Event }) {
         <div className="flex justify-center">
           <LinkButton
             href={`/events/${event.slug}`}
-            className="px-8 py-4 text-base sm:text-lg"
+            className="px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-lg"
           >
             Find out more
           </LinkButton>

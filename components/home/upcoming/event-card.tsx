@@ -19,7 +19,7 @@ export default function EventCard({ event }: { event: Event }) {
             <MarkdownContent markdownContent={event.description} />
         </div>
         <div className="flex justify-center">
-            <LinkButton href={eventHref} className="px-8 py-4 text-lg">Find out more</LinkButton>
+            <LinkButton href={eventHref} className="px-4 py-2 sm:px-8 sm:py-4 text-sm sm:text-lg">Find out more</LinkButton>
         </div>
     </InteractiveCard>
 }

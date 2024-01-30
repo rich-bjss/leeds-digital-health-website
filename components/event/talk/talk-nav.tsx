@@ -25,11 +25,11 @@ export default function TalkNav({
   else if (!videoExists && slidesExist) mediaTabName = "Slides"
 
   return (
-    <nav className="text-sm font-medium text-left text-navy border-b border-gray-200 mb-8">
+    <nav className="text-xs sm:text-sm font-medium text-left text-navy border-b border-gray-200 mb-8">
       <ul className="flex flex-wrap -mb-px">
         <li>
           <Link
-            className="inline-block p-4 border-b-2 rounded-t-lg hover:bg-slate-50"
+            className="inline-block py-4 px-4 border-b-2 rounded-t-lg hover:bg-slate-50"
             href={`/events/${eventSlug}`}
           >
             &larr;
@@ -38,7 +38,7 @@ export default function TalkNav({
         <li>
           <Link
             className={cn(
-              "inline-block p-4 border-b-2 rounded-t-lg hover:bg-slate-50",
+              "inline-block py-4 px-4 border-b-2 rounded-t-lg hover:bg-slate-50",
               detailsStyling
             )}
             href={
@@ -54,7 +54,7 @@ export default function TalkNav({
           <li>
             <Link
               className={cn(
-                "inline-block p-4 border-b-2 rounded-t-lg hover:bg-slate-50",
+                "inline-block py-4 px-4 border-b-2 rounded-t-lg hover:bg-slate-50",
                 videoStyling
               )}
               href={
