@@ -16,7 +16,7 @@ export function NavLink({
   return (
     <Link
       href={href}
-      className={cn("text-xs px-4 py-2 max-w-sm  sm:text-base border-2 font-bold border-navy bg-white rounded text-navy hover:bg-blue-50")}
+      className={cn("text-xs px-4 py-2 sm:text-base border-2 font-bold border-navy bg-white rounded text-navy hover:bg-blue-50")}
     >
       {children}
     </Link>
@@ -42,7 +42,10 @@ export default function Header() {
         <MenuButton />
         <div className="w-full sm:w-max">
           <ul className="w-full flex justify-center mt-4 pt-0 sm:mt-0">
-            <li className="">
+            <li className="pr-2 sm:pr-8">
+              <NavLink href="/news">News</NavLink>
+            </li>
+            <li className="pr-2 sm:pr-8">
               <NavLink href="/committee">Making it Possible</NavLink>
             </li>
           </ul>

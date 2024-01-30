@@ -39,7 +39,7 @@ export default function TalkCard({ talk }: { talk: Talk }) {
       </div>
       <h2
         className={cn(
-          "mb-2 text-lg sm:text-2xl font-bold tracking-tight text-gray-900"
+          "mb-2 text-lg sm:text-2xl font-bold tracking-tight text-navy"
           // "dark:text-white"
         )}
       >
