@@ -81,7 +81,7 @@ export async function getNewsPosts(): Promise<Post[] | null> {
   try {
     const entries = await fetchGraphQL(
       `query {
-        postCollection(where: { type: "Post" }, limit: 10) {
+        postCollection(order: date_DESC, where: { type: "Post" }, limit: 10) {
           items {
             ${POST_GRAPHQL_FIELDS}
           }
