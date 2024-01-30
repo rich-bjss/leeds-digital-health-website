@@ -6,7 +6,9 @@
     "start": "next start",
     "lint": "next lint",
     "setup": "node ./lib/setup.js",
-    "prettier-format": "prettier --config .prettierrc '{app,lib}/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc '{app,lib}/**/*.ts' --write",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.1",
@@ -31,9 +33,16 @@
     "video-react": "^0.16.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
     "@types/video-react": "^0.15.5",
     "eslint-config-next": "^14.1.0",
-    "prettier": "^3.0.3"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2"
   },
   "overrides": {
     "tailwindcss": "^3.3.5"
