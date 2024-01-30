@@ -6,7 +6,6 @@ export default interface Event {
   description: string
   date: string
   talksCollection: { items: Talk[] }
-  slides: any
   image: { description: string; url: string }
   video: { title: string; description: string; url: string }
   slug: string

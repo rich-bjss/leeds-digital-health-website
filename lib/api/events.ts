@@ -37,6 +37,10 @@ const EVENT_GRAPHQL_FIELDS = `
         description
         url
       }
+      slides {
+        description
+        url
+      }
       sys {
         id
       }

@@ -1,9 +1,8 @@
-import Image from "next/image"
-
+import Speakers from "../speaker-card/speakers"
 import MarkdownContent from "@/components/ui-elements/markdown-content"
 import Talk from "@/lib/model/talk"
+
 import { cn } from "@/lib/tailwind-helper"
-import Speakers from "../speaker-card/speakers"
 
 export default function TalkMainPage({ talk }: { talk: Talk }) {
   return (

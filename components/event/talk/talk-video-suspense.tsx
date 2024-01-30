@@ -28,6 +28,7 @@ async function DisplayTalkVideo({
         talkId={talkId}
         currentPage="video"
         videoExists={talk?.video ? true : false}
+        slidesExist={talk?.slides?.url ? true : false}
       />
       <TalkVideoPageContent talk={talk} eventSlug={eventSlug} talkId={talkId} />
     </div>

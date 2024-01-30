@@ -5,7 +5,7 @@ export default interface Talk {
   title: string
   image: { description: string; url: string }
   speakersCollection: { items: Speaker[] }
-  slides: any
+  slides: { description: string; url: string }
   video: string
   description: string
   sys: { id: string }

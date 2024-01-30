@@ -6,16 +6,23 @@ export default function TalkNav({
   eventSlug,
   talkId,
   currentPage,
-  videoExists
+  videoExists,
+  slidesExist
 }: {
   eventSlug: string
   talkId: string
   currentPage: string
   videoExists: boolean
+  slidesExist: boolean
 }) {
   const highlightStyling = "text-pink border-pink"
   const detailsStyling = currentPage === "details" ? highlightStyling : ""
   const videoStyling = currentPage === "video" ? highlightStyling : ""
+
+  let mediaTabName
+  if (videoExists && slidesExist) mediaTabName = "Video & Slides"
+  else if (videoExists && !slidesExist) mediaTabName = "Video"
+  else if (!videoExists && slidesExist) mediaTabName = "Slides"
 
   return (
     <nav className="text-sm font-medium text-left text-navy border-b border-gray-200 mb-8">
@@ -43,7 +50,7 @@ export default function TalkNav({
             Talk Details
           </Link>
         </li>
-        {videoExists && (
+        {(videoExists || slidesExist) && (
           <li>
             <Link
               className={cn(
@@ -56,7 +63,7 @@ export default function TalkNav({
                   : `/events/${eventSlug}/talk/${talkId}/video`
               }
             >
-              Video
+              {mediaTabName}
             </Link>
           </li>
         )}
