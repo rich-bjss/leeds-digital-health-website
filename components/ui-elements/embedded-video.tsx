@@ -5,7 +5,7 @@ export default function EmbeddedVideo({ url }: { url: string }) {
     .replace(/www.youtube.com\/watch\?v=/i, "www.youtube.com/embed/")
     .replace(/vimeo.com\//i, "player.vimeo.com/video/")
 
-    //TODO: still need to fix player dimensions for YouTube and Vimeo on smaller screens
+    //Player dimensions could be improved for YouTube and Vimeo on smaller screens
     //YouTube and Vimeo have different problems
   return (
     <div

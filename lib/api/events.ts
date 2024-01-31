@@ -63,9 +63,6 @@ const EVENT_GRAPHQL_FIELDS = `
 `
 
 export async function getEvent(slug: string): Promise<any> {
-  //TODO this here for dev styling purposes; delete this
-  //await new Promise(resolve => setTimeout(resolve, 500000))
-
   const entry = await fetchGraphQL(
     `query {
       eventsCollection(where: { slug: "${slug}" }, preview:false, limit: 1) {
@@ -83,9 +80,6 @@ export async function getEvent(slug: string): Promise<any> {
 
 export async function getHeadlineEvents(): Promise<Event[]> {
   const todaysDate = formatISO(new Date())
-
-  //TODO this here for dev styling purposes; delete this
-  // await new Promise(resolve => setTimeout(resolve, 5000))
 
   const entries = await fetchGraphQL(`
     query {
@@ -134,9 +128,6 @@ export async function getUpcomingEvents(): Promise<Event[]> {
 
 export async function getPreviousEvents(): Promise<any[]> {
   const todaysDate = formatISO(new Date())
-
-  //TODO this is here for dev styling purposes; delete this
-  // await new Promise(resolve => setTimeout(resolve, 500))
 
   const entries = await fetchGraphQL(
     `query {
