@@ -4,7 +4,7 @@ import { PT_Sans_Narrow } from "next/font/google"
 
 import LinkButton from "@/components/ui-elements/buttons/link-button"
 
-import imageSource from "@/public/roundtable.jpg"
+import imageSource from "@/public/roundtable1.jpg"
 
 import { cn } from "@/lib/tailwind-helper"
 
