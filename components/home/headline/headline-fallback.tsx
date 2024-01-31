@@ -17,26 +17,24 @@ export default function HeadlineFallback() {
   return (
     <>
       <div className="w-full h-96 flex justify-center relative">
-        <div>
-          <Image
-            src={imageSource}
-            alt="Round table event"
-            fill
-            style={{ objectFit: "cover" }}
-          />
-          <div className="absolute z-10 w-full h-full left-0 top-0 bg-navy opacity-70" />
-          <div className="absolute z-20 w-full h-full left-0 top-0 flex justify-end p-2 sm:pt-2 md:pr-8 lg:pt-4">
-            <div className="text-right w-full sm:w-4/12 text">
-              <h2
-                className={cn(
-                  "text-white leading-none font-bold text-3xl lg:text-5xl sm:leading-tight md:leading-tight md:text-4xl",
-                  headlineFont.className
-                )}
-              >
-                Connecting digital health leaders and innovators in the Leeds
-                City Region to share ideas, innovations, and best practice.
-              </h2>
-            </div>
+        <Image
+          src={imageSource}
+          alt="Round table event"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+        <div className="absolute z-10 w-full h-full left-0 top-0 bg-navy opacity-70" />
+        <div className="absolute z-20 w-full h-full left-0 top-0 flex justify-end p-2 sm:pt-2 md:pr-8 lg:pt-4">
+          <div className="text-right w-full sm:w-4/12 text">
+            <h2
+              className={cn(
+                "text-white leading-none font-bold text-3xl lg:text-5xl sm:leading-tight md:leading-tight md:text-4xl",
+                headlineFont.className
+              )}
+            >
+              Connecting digital health leaders and innovators in the Leeds City
+              Region to share ideas, innovations, and best practice.
+            </h2>
           </div>
         </div>
       </div>
