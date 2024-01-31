@@ -4,7 +4,7 @@ import { PT_Sans_Narrow } from "next/font/google"
 
 import LinkButton from "@/components/ui-elements/buttons/link-button"
 
-import imageSource from "@/public/Roundtable.jpg"
+import imageSource from "@/public/roundtable.jpg"
 
 import { cn } from "@/lib/tailwind-helper"
 
@@ -23,12 +23,12 @@ export default function HeadlineFallback() {
           fill
           style={{ objectFit: "cover" }}
         />
-        <div className="absolute z-10 w-full h-full left-0 top-0 bg-navy opacity-70" />
+        <div className="absolute z-10 w-full h-full left-0 top-0 bg-white opacity-60" />
         <div className="absolute z-20 w-full h-full left-0 top-0 flex justify-end p-2 sm:pt-2 md:pr-8 lg:pt-4">
           <div className="text-right w-full sm:w-4/12 text">
             <h2
               className={cn(
-                "text-white leading-none font-bold text-3xl lg:text-5xl sm:leading-tight md:leading-tight md:text-4xl",
+                "text-pink leading-none font-bold text-3xl lg:text-5xl sm:leading-tight md:leading-tight md:text-4xl",
                 headlineFont.className
               )}
             >
