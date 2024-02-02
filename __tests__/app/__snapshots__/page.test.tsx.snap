@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page renders  1`] = `
+<div>
+  <div
+    class="mx-auto"
+  >
+    <div
+      class="headline-content-mock"
+    />
+    <div
+      class="hero-post-mock"
+    />
+    <div
+      class="upcoming-events-mock"
+    />
+    <div
+      class="footer-mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`Page renders a div 1`] = `
+<div>
+  <div
+    class="mx-auto"
+  >
+    <div
+      class="headline-content-mock"
+    />
+    <div
+      class="hero-post-mock"
+    />
+    <div
+      class="upcoming-events-mock"
+    />
+    <div
+      class="footer-mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`Page renders the expected  1`] = `
+<div>
+  <div
+    class="mx-auto"
+  >
+    <div
+      class="headline-content-mock"
+    />
+    <div
+      class="hero-post-mock"
+    />
+    <div
+      class="upcoming-events-mock"
+    />
+    <div
+      class="footer-mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`Page renders the expected home page 1`] = `
+<div>
+  <div
+    class="mx-auto"
+  >
+    <div
+      class="headline-content-mock"
+    />
+    <div
+      class="hero-post-mock"
+    />
+    <div
+      class="upcoming-events-mock"
+    />
+    <div
+      class="footer-mock"
+    />
+  </div>
+</div>
+`;
+
+exports[`Page renders the expected home page content 1`] = `
+<div>
+  <div
+    class="mx-auto"
+  >
+    <div
+      class="headline-content-mock"
+    />
+    <div
+      class="hero-post-mock"
+    />
+    <div
+      class="upcoming-events-mock"
+    />
+    <div
+      class="footer-mock"
+    />
+  </div>
+</div>
+`;

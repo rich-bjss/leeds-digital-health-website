@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders the header unchanged 1`] = `
+<div>
+  <nav
+    class="bg-white fixed h-22 z-50 w-full"
+    role="navigation"
+  >
+    <div
+      class="container py-2 px-2 sm:py-4 items-center sm:grid sm:grid-cols-2 ml-8 w-full"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="mr-12 w-full ml-4 sm:w-max"
+        >
+          <a
+            href="/"
+          >
+            <img
+              alt="Leeds Digital Health Logo"
+              class="w-40 h-auto"
+              data-nimg="1"
+              decoding="async"
+              fetchpriority="high"
+              height="120"
+              src="/logo.svg"
+              style="color: transparent;"
+              width="160"
+            />
+          </a>
+        </div>
+        <div
+          class="ml-auto hidden"
+        >
+          <button
+            class="flex items-center px-3 py-2 border rounded"
+            type="button"
+          >
+            <svg
+              class="h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>
+                Menu
+              </title>
+              <path
+                d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <ul
+        class="w-full mt-4 pt-0 sm:mt-0 text-left sm:text-right"
+      >
+        <li
+          class="inline-block"
+        >
+          <a
+            class="text-xs px-4 py-2 sm:text-lg font-bold bg-white text-navy hover:text-pink hover:border-b-2 border-pink"
+            href="/news"
+          >
+            News
+          </a>
+        </li>
+        <li
+          class="inline-block"
+        >
+          <a
+            class="text-xs px-4 py-2 sm:text-lg font-bold bg-white text-navy hover:text-pink hover:border-b-2 border-pink"
+            href="/committee"
+          >
+            LDH Committee
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
