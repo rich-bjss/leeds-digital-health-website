@@ -130,9 +130,6 @@ const config: Config = {
   // The test environment that will be used for testing
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  moduleNameMapper: {
-    "^@(.*)/(.*)$": ["<rootDir>/$1/$2*"]
-  }
   //#region further commented options
   // All imported modules in your tests should be mocked automatically
   // automock: false,
