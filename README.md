@@ -1,3 +1,35 @@
+# Leeds Digital Health Website
+
+## Overview
+
+React/NextJS project with Contentful CMS intregration via GraphQL.
+
+## Setup/Configuration
+
+As this is React/NextJS, NodeJS will be required on local install.
+
+### Configuring Contentful Integration
+
+A developer should have access to the corresponding space on Contentful.
+
+Integration requires API Keys which can be found on the Contentful site ( Settings &rarr; API Keys)
+
+Create a `.env.local` file following the example file `.env.local.example`, found in this project.
+
+Copy the access tokens into `.env.local`.
+
+## Unit Tests
+
+These are currently in a partially-complete state. Note that [due to limitations](https://github.com/vercel/next.js/issues/47131#issuecomment-1487739447) [with react-testing-library](https://github.com/testing-library/react-testing-library/issues/1209) it may currently not be possible to properly test the Suspense components, but by refactoring the async child components into separate files (or possibly just `export`ing them), they can be individually tested using the function provided in `@/__tests__/test-helper.ts`
+
+
+
+---
+
+# Original document follows (generated for Vercel template project)
+
+---
+
 # A statically generated blog example using Next.js and Contentful
 
 This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using [Contentful](https://www.contentful.com/) as the data source.
