@@ -8,7 +8,8 @@
     "setup": "node ./lib/setup.js",
     "prettier-format": "prettier --config .prettierrc '{app,lib}/**/*.ts' --write",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:update-snapshot": "jest --updateSnapshot"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.1",
