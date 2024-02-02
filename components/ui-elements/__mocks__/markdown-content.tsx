@@ -6,9 +6,9 @@ export default function MarkdownContent({
   className?: string
 }) {
   return (
-    <div className="markdown-content-mock">
-      <p className="markdown-content-prop">{markdownContent}</p>
-      <p className="markdown-content-classname-prop">{className}</p>
+    <div data-testid="markdown-content-mock">
+      <p data-testid="markdown-content-prop">{markdownContent}</p>
+      <p data-testid="markdown-content-classname-prop">{className}</p>
     </div>
   )
 }

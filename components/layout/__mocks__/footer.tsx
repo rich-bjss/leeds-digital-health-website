@@ -1,3 +1,3 @@
 export default function Footer(){
-    return <div className="footer-mock"></div>
+    return <div data-testid="footer-mock"></div>
 }

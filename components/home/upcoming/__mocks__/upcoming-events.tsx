@@ -1,3 +1,3 @@
 export default function UpcomingEvents(){
-    return <div className="upcoming-events-mock"></div>
+    return <div data-testid="upcoming-events-mock"></div>
 }

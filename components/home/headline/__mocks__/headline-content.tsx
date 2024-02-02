@@ -1,3 +1,3 @@
 export default function HeadlineContent(){
-    return <div className="headline-content-mock" />
+    return <div data-testid="headline-content-mock" />
 }

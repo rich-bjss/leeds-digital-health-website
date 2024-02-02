@@ -1,3 +1,3 @@
 export default function HeroPost(){
-    return <div className="hero-post-mock"></div>
+    return <div data-testid="hero-post-mock"></div>
 }
