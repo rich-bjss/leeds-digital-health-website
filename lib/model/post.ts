@@ -10,4 +10,8 @@ export default interface Post {
     author: Author
     type: string
     content: string
+    url: string
+    sys: {
+        id: string
+    }
 }

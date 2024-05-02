@@ -1,13 +1,16 @@
 import Link from "next/link"
-import { Suspense } from "react"
+import { Suspense, useEffect } from "react"
 
 import News from "../../components/news/news"
 import LoadingMessage from "@/components/ui-elements/loading-message"
 
-import { getNewsPosts } from "@/lib/api/posts"
+import { getExternalNewsPosts, getNewsPosts } from "@/lib/api/posts"
 
 async function DisplayNews() {
   const posts = await getNewsPosts()
+  const externalPosts = await getExternalNewsPosts()
+  console.log('externalPosts', externalPosts)
+  console.log('posts', posts)
   if (!posts || posts.length === 0)
     return (
       <div className="container mx-auto">

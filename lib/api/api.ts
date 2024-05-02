@@ -1,3 +1,5 @@
+import { createClient } from 'contentful-management'
+
 export async function fetchGraphQL(
   query: string,
   preview = false
@@ -33,3 +35,9 @@ export async function fetchGraphQL(
 
   return responseJson
 }
+
+export const client = createClient({
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
+  space: process.env.CONTENTFUL_SPACE_ID,
+  host: 'https://cdn.contentful.com'
+})
