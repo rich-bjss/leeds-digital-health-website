@@ -1,7 +1,7 @@
 import Post from "../model/post"
 import { fetchGraphQL } from "./api"
 import { JSDOM } from "jsdom"
-import { createClient } from 'contentful-management'
+import { Asset, createClient } from 'contentful-management'
 
 const POST_GRAPHQL_FIELDS = `
   slug
@@ -22,6 +22,15 @@ const POST_GRAPHQL_FIELDS = `
   sys {
     id
   }
+`
+
+const CACHED_GRAPHQL_FIELD = `
+  title
+  description
+  image {
+    url
+  }
+  url
 `
 
 export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
@@ -112,16 +121,33 @@ export async function getExternalNewsPosts(): Promise<Post[] | null> {
         }
       }`
     )
+
+    const cachedExternalNews = await fetchGraphQL(
+      `query {
+        cachedExternalNewsCollection {
+          items {
+            ${CACHED_GRAPHQL_FIELD}
+          }
+        }
+      }`
+    )
+
+    const cachedExternalNewsUrl = cachedExternalNews.data.cachedExternalNewsCollection.items.map((item: any) => item.url)
+
     const result = extractPostEntries(entries)
     const metaData = await getDataFromUrl(result)
-    await updatePost('3V18p30hmCLXVBo9JEQO39', metaData)
+
+    metaData.map(async(data: any) => {
+      if (!cachedExternalNewsUrl.includes(data.url)) {
+        await createPost(data)        
+      }
+    })
     return result
   } catch (e) {
     console.log(e)
   }
   return null
 }
-
 
 function extractPost(fetchResponse: any): any {
   return fetchResponse?.data?.postCollection?.items?.[0]
@@ -150,9 +176,7 @@ async function extractMetaTags(url: string) {
         }
 
         return tags
-      },
-      {}
-    )
+      },{})
 
     const result = {
       title:
@@ -161,7 +185,8 @@ async function extractMetaTags(url: string) {
         metaTags.description ||
         metaTags["og:description"],
       image:
-        metaTags.image || metaTags["og:image"],
+        metaTags["og:image"],
+      url
     }
     return result
   } catch (error) {
@@ -170,97 +195,82 @@ async function extractMetaTags(url: string) {
 }
 
 async function getDataFromUrl(posts: Post[]) {
-  return posts.reduce(async (acc, post) => {
+  return posts.reduce<any>(async (acc, post) => {
     if (!!post.url.trim()) {
       const metaData = await extractMetaTags(post.url)
-      return {
-        ...acc,
-        [post.sys.id]: metaData
-      }
+      return [...acc, metaData]
     }
     return acc
-  }, {})
+  }, [])
 }
 
+interface createPostProps {
+  title?: string, 
+  content?: string, 
+  image?: string, 
+  url?: string
+}
 
-export async function updatePost(entryId: string, newFields: any, preview = false) {
+export async function createPost(fields: createPostProps) {
+  const {content, image, title, url} = fields
   const SPACE_ID = process.env.CONTENTFUL_SPACE_ID as string
-  const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN as string
-  const ENTRY_ID = '3V18p30hmCLXVBo9JEQO39'
+  const PERSONAL_ACCESS_TOKEN = process.env.CONTENTFUL_PERSONAL_ACCESS_TOKEN as string
 
-  // cdn.contentful.com - read only
-  // api.contentful.com - write/read
+  const client = createClient({
+    accessToken: PERSONAL_ACCESS_TOKEN
+  })
 
+  const space = await client.getSpace(SPACE_ID)
+  const environment = await space.getEnvironment('master')
 
-//   const client = createClient({
-//   accessToken: ACCESS_TOKEN,
-//   host: 'cdn.contentful.com'
-// },)
+  let publishedImage: Asset | null = null
 
-// Update entry
+  if (image && title && content) {
+    const createAsset = await environment.createAsset({
+      fields: {
+        title: {
+          'en-US': title
+        },
+      description: {
+        'en-US': content
+      },
+      file: {
+        'en-US': {
+          contentType: 'image',
+          fileName: 'image.png',
+          upload: image
+        }
+      }}
+    })
 
-const client = createClient({
-    accessToken: ACCESS_TOKEN,
-  }, 
-  {
-    type: 'plain',
-    defaults: {
-      spaceId: SPACE_ID,
-      environmentId: 'master',
-    },
+    const processForAllLocales = await createAsset.processForAllLocales()
+    publishedImage = await processForAllLocales.publish()
   }
-)
 
-// const client = createClient({
-//   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-//   host: 'cdn.contentful.com',
-
-// })
-
-const entries = await client.entry.getMany({
-  query: {
-    limit: 200
+  let entryFields = {
+    title: {
+        'en-US': title
+      },
+      description: {
+        'en-US': content
+      },
+      url: {
+        'en-US': url
+      }
   }
-})
 
-console.log('entries', entries)
+  if (publishedImage) {
+    Object.assign(entryFields, {    
+      image: {
+      'en-US': {"sys": {"id": publishedImage.sys.id, "linkType": "Asset", "type": "Link"}}
+    }})
+  }
 
+  const entry = await environment.createEntryWithId('cachedExternalNews', Date.now().toString(), {
+    fields: {
+      ...entryFields
+    }
+  })
 
-  // const post = await client.entry.get({
-  //   entryId: ENTRY_ID
-  // })
-
-  // console.log('post', post)
-
-  // const space = await client.getSpace(SPACE_ID);
-  // console.log('space', space)
-
-//   const environment = await space.getEnvironment('master')
-// const environment = await space.getEnvironment("master");
-
-//   const entry = await environment.getEntry(entryId);
-// const entries = await client.entry.getMany({})
-
-
-// const entry = entries.items.find(item => item.sys.id === ENTRY_ID)
-// entry.fields.title = 'new title'
-
-//   // Update entry fields
-  // Object.keys(newFields).forEach(fieldName => {
-  //   post.fields[fieldName] = newFields[fieldName];
-  // });
-
-
-
-  // await entry.update();
-
-
-  // await client.entry.update({
-  //   entryId: '3V18p30hmCLXVBo9JEQO39',
-
-  // }, {
-  //   fields: {
-  //     title: 'test',
-  //   }
-  // })
+  await entry.publish()
 }

@@ -9,8 +9,7 @@ import { getExternalNewsPosts, getNewsPosts } from "@/lib/api/posts"
 async function DisplayNews() {
   const posts = await getNewsPosts()
   const externalPosts = await getExternalNewsPosts()
-  console.log('externalPosts', externalPosts)
-  console.log('posts', posts)
+
   if (!posts || posts.length === 0)
     return (
       <div className="container mx-auto">
