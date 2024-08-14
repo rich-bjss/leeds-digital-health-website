@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 import { getAllSponsors } from "@/lib/api/sponsors"
+import Sponsor from "@/lib/model/sponsor"
 
 export default async function SponsorList() {
     const sponsors = await getAllSponsors()
@@ -13,19 +14,7 @@ export default async function SponsorList() {
           </h1>
           <div className="w-full flex justify-center mt-16">
             <ul className="list-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-              {sponsors.map((sponsor) => (
-                <li key={sponsor.sys.id} className="mx-auto">
-                  <Image
-                    src={sponsor.logo.url}
-                    alt={sponsor.name}
-                    sizes="100vw"
-                    // fill
-                    // style={{ objectFit: "contain", width: "50%", height: "auto" }}
-                    width={200}
-                    height={60}
-                  />
-                </li>
-              ))}
+              {sponsors.map(buildSponsorElement)}
             </ul>
           </div>
           {/* <Image
@@ -38,3 +27,35 @@ export default async function SponsorList() {
       </section>
     )
   }
+
+function buildSponsorElement(sponsor: Sponsor) {
+  if (sponsor?.href) { // if we have a link to the sponsor's site, make their pic clickable
+    return (
+      <li key={sponsor.sys.id} className="mx-auto">
+        <a href={sponsor.href}>
+          { buildImageElement(sponsor) }
+        </a>
+      </li>
+    )
+  } else {
+    return (
+      <li key={sponsor.sys.id} className="mx-auto">
+        { buildImageElement(sponsor) }
+      </li>
+    )
+  }
+} 
+
+function buildImageElement(sponsor: Sponsor) {
+  return (
+      <Image
+      src={sponsor.logo.url}
+      alt={sponsor.name}
+      sizes="100vw"
+      // fill
+      // style={{ objectFit: "contain", width: "50%", height: "auto" }}
+      width={200}
+      height={60}
+    />
+  )
+}

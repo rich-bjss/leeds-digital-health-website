@@ -5,6 +5,7 @@ const sponsorQuery = `query {
       sponsorsCollection {
         items {
           name
+          href
           logo {
                 url
                 description
