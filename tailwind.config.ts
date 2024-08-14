@@ -18,10 +18,10 @@ export default {
       },
       a: {
         textDecoration: "none",
-        color: "#041E42",
+        color: "#D90699",
         fontWeight: "bold",
         "&:hover": {
-          color: "#041E42",
+          color: "#D90699",
           textDecoration: "none",
           fontWeight: "bold"
         }
