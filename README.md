@@ -2,11 +2,20 @@
 
 ## Overview
 
-React/NextJS project with Contentful CMS intregration via GraphQL.
+React/NextJS project with Contentful CMS integration via GraphQL.
 
 ## Setup/Configuration
 
-As this is React/NextJS, NodeJS will be required on local install.
+Requirements:
+- bunjs (https://bun.sh)
+- possibly nodejs?
+
+Installation:
+- Clone this repo
+- Enter the repo's directory and run "bun update" to install dependencies
+- Copy ".env.local.example" to ".env.local" and add API key information to ".env.local" as described below
+
+To run the site locally, run "bun dev" in the repo's directory. Once it's running you can access the site from localhost:3000
 
 ### Configuring Contentful Integration
 
