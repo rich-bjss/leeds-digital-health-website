@@ -43,11 +43,11 @@ export default function Header() {
           </div>
           <MenuButton />
         </div>
-        <ul className="w-full mt-4 pt-0 sm:mt-0 text-left sm:text-right">
-          <li className="inline-block">
+        <ul className="w-full mt-4 pt-0 sm:mt-0 text-left sm:text-right sm:py-2">
+          <li className="inline-block px-1">
             <NavLink href="/news">News</NavLink>
           </li>
-          <li className="inline-block">
+          <li className="inline-block px-1">
             <NavLink href="/committee">LDH Committee</NavLink>
           </li>
         </ul>
