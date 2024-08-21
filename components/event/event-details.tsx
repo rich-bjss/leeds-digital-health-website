@@ -60,7 +60,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
       {event.description && (
         <div className="my-8 lg:px-32 md:px-16 sm:px-4 lg:my-16">
           <MarkdownContent
-            className="w-full p-4 text-navy bg-gray-100 content text-center rounded"
+            className="w-full p-4 text-navy bg-gray-50 content text-center rounded"
             markdownContent={event.description}
           />
         </div>

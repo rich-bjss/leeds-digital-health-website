@@ -38,7 +38,7 @@ export default function HeadlineEvent({ event }: { event: Event }) {
           dateString={event.date}
         />
         <MarkdownContent
-          className="w-full p-2 sm:p-4 text-navy bg-gray-100 content text-center rounded my-4 sm:my-8 text-sm sm:text-base"
+          className="w-full p-2 sm:p-4 text-navy bg-gray-50 content text-center rounded my-4 sm:my-8 text-sm sm:text-base"
           markdownContent={event.description}
         />
         <div className="flex justify-center">

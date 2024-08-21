@@ -34,6 +34,9 @@ export default {
         },
         navy: {
           DEFAULT: "#041E42"
+        },
+        gray: {
+          50: "#f9fafc"  
         }
       },
       fontFamily: {

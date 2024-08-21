@@ -25,7 +25,7 @@ export default function BlogPost({
           {post.title}
         </h1>
         <MarkdownContent
-          className="w-full p-4 text-navy bg-gray-100 content text-center rounded mb-8 text-sm sm:text-base"
+          className="w-full p-4 text-navy bg-gray-50 content text-center rounded mb-8 text-sm sm:text-base"
           markdownContent={post.content}
         />
       </div>
