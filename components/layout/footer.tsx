@@ -1,5 +1,5 @@
-import PreviousEvents from "../previous-events";
+import EventList, { EventListState } from "../event-list";
 
-export default function Footer(){
-    return <PreviousEvents forFooter />
+export default function Footer({state}: {state: EventListState}){
+    return <EventList forFooter state={state}/>
 }

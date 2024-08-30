@@ -9,7 +9,7 @@ export default function Page() {
       <HeadlineContent />
       <HeroPost />
       <UpcomingEvents />
-      <Footer />
+      <Footer state="dynamic"/>
     </div>
   )
 }

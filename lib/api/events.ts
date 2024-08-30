@@ -126,7 +126,7 @@ export async function getUpcomingEvents(): Promise<Event[]> {
   return sortedArray
 }
 
-export async function getPreviousEvents(): Promise<any[]> {
+export async function getPreviousEvents(): Promise<Event[]> {
   const todaysDate = formatISO(new Date())
 
   const entries = await fetchGraphQL(
@@ -141,10 +141,12 @@ export async function getPreviousEvents(): Promise<any[]> {
   return extractEvents(entries)
 }
 
-export async function getAllEvents(): Promise<any[]> {
+
+export async function getAllEvents(limit? :number): Promise<Event[]> {
+  let setLimit = limit && limit > 0 ? `, limit: ${limit}` : ''
   const entries = await fetchGraphQL(
     `query {
-      eventsCollection(order: date_DESC) {
+      eventsCollection(order: date_DESC${setLimit}) {
         items {
           ${EVENT_LIST_GRAPHQL_FIELDS}
         }
