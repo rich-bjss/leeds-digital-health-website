@@ -2,7 +2,7 @@ import EventList, { EventListState } from "../event-list";
 
 function FooterText() {
     return (
-        <div className="bg-navy text-white font-bold text-center p-7">
+        <div className="bg-navy text-white font-bold text-center p-7 focus:outline outline-white">
             <a href="/all-events" className="p-5">
               <span>For all events, <span className="text-pink">click here</span></span>
             </a>
