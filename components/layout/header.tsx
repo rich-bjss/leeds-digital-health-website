@@ -45,6 +45,9 @@ export default function Header() {
         </div>
         <ul className="w-full mt-4 pt-0 sm:mt-0 text-left sm:text-right sm:py-2">
           <li className="inline-block px-1">
+            <NavLink href="/all-events">Events</NavLink>
+          </li>
+          <li className="inline-block px-1">
             <NavLink href="/news">News</NavLink>
           </li>
           <li className="inline-block px-1">
