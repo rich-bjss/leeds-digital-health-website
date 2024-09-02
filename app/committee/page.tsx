@@ -10,6 +10,7 @@ export default function SponsorPage() {
       <Suspense fallback={<LoadingMessage>Loading sponsors...</LoadingMessage>}>
         <SponsorList />
       </Suspense>
+      <Footer showEventList={false} />
     </>
   )
 }
