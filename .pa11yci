@@ -1,7 +1,11 @@
 {
     "urls": [
         "http://localhost:3000",
+        "http://localhost:3000/all-events",
+        "http://localhost:3000/previous-events",
         "http://localhost:3000/news",
-        "http://localhost:3000/committee"
+        "http://localhost:3000/committee",
+        "http://localhost:3000/events/from-data-to-diagnosis-designing-and-deploying-digital-pathways/talk/2bbJxmNMtj1jP0eqfJBhIg",
+        "http://localhost:3000/events/from-data-to-diagnosis-designing-and-deploying-digital-pathways"
     ]
 }

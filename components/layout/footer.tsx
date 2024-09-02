@@ -1,11 +1,12 @@
 import EventList, { EventListState } from "../event-list";
+import LinkButton from "../ui-elements/buttons/link-button";
 
 function FooterText() {
     return (
-        <div className="bg-navy text-white font-bold text-center p-7 focus:outline outline-white">
-            <a href="/all-events" className="p-5">
-              <span>For all events, <span className="text-pink">click here</span></span>
-            </a>
+        <div className="bg-navy p-3 flex justify-center">
+            <LinkButton className="bg-pink p-4 top-0 rounded" href="/all-events">
+                <span>Show all events</span>
+            </LinkButton>
         </div>
     )
 }
