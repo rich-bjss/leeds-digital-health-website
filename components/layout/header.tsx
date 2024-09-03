@@ -27,7 +27,7 @@ export function NavLink({
 export default function Header() {
   return (
     <nav className="bg-white fixed h-22 z-50 w-full" role="navigation">
-      <div className="container py-2 px-2 sm:py-4 items-center sm:grid sm:grid-cols-2 ml-8 w-full">
+      <div className="container py-2 px-2 sm:py-4 items-center sm:flex sm:justify-between ml-8 w-full">
         <div className="">
           <div className="mr-12 w-full ml-4 sm:w-max">
             <Link href="/">
@@ -52,6 +52,9 @@ export default function Header() {
           </li>
           <li className="inline-block px-1">
             <NavLink href="/committee">LDH Committee</NavLink>
+          </li>
+          <li className="inline-block px-1">
+            <NavLink href="/contact-us">Contact Us</NavLink>
           </li>
         </ul>
       </div>
