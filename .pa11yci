@@ -6,6 +6,7 @@
         "http://localhost:3000/news",
         "http://localhost:3000/committee",
         "http://localhost:3000/events/from-data-to-diagnosis-designing-and-deploying-digital-pathways/talk/2bbJxmNMtj1jP0eqfJBhIg",
-        "http://localhost:3000/events/from-data-to-diagnosis-designing-and-deploying-digital-pathways"
+        "http://localhost:3000/events/from-data-to-diagnosis-designing-and-deploying-digital-pathways",
+        "http://localhost:3000/contact-us"
     ]
 }
