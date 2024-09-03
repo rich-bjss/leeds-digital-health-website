@@ -1,6 +1,4 @@
-import EventList from "@/components/event-list";
-
-export default function PreviousEventsPage(){
+export default function ContactUsResultsPage(){
     return (
         <>
             <p>Placeholder for contact us form</p>
