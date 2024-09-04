@@ -4,8 +4,8 @@ import LinkButton from "../ui-elements/buttons/link-button";
 function FooterText() {
     return (
         <div className="bg-navy p-3 flex justify-center">
-            <LinkButton className="bg-pink p-4 top-0 rounded" href="/all-events">
-                <span>Show all events</span>
+            <LinkButton className="bg-pink p-4 top-0 rounded" href="https://www.meetup.com/leeds-digital-health/join/">
+                <span>Join us on Meetup →</span>
             </LinkButton>
         </div>
     )

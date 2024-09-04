@@ -77,7 +77,7 @@ async function DisplayEvents({
         </div>
       ))}
       {forFooter && (
-        <LinkButton className="py-2 text-center" href="/previous-events">
+        <LinkButton className="py-2 text-center" href="/all-events">
           View More...
         </LinkButton>
       )}
