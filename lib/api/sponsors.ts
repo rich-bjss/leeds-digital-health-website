@@ -6,6 +6,7 @@ const sponsorQuery = `query {
         items {
           name
           href
+          description
           logo {
                 url
                 description
