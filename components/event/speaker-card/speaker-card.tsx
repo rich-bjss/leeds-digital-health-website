@@ -22,9 +22,7 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
         // "dark:bg-gray-800 dark:border-gray-700"
       )}
     >
-      <div className="flex justify-between items-center mb-5 text-gray-500">
-        {/* <span className="text-sm">14 days ago</span> */}
-      </div>
+      <div className="flex flex-col">
       <h2
         className={cn(
           "text-lg pl-2 sm:text-2xl font-bold tracking-tight text-gray-900"
@@ -33,6 +31,7 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
       >
         {speaker.name}
       </h2>
+      <div className="flex flex-row">
       {speaker.image && (
         <Image
           className="w-32 h-32 float-left border-2 shadow-sm mt-2 mx-2"
@@ -43,10 +42,16 @@ export default function SpeakerCard({ speaker }: { speaker: Speaker }) {
           style={{ objectFit: "cover", objectPosition: "50% 50%" }}
         />
       )}
+      <div className="flex flex-col">
+      <span className="text-sm text-gray-500">{speaker.jobTitle}</span>
+      <span className="text-sm text-gray-500">{speaker.company}</span>
       <MarkdownContent
         className="content p-2 text-navy"
         markdownContent={speaker.description}
       />
+      </div>
+      </div>
+      </div>
     </InteractiveCard>
   )
 }
