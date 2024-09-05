@@ -38,6 +38,7 @@ function buildSponsorElement(sponsor: Sponsor) {
 function buildImageElement(sponsor: Sponsor) {
   return (
     <Image
+      className="mx-auto"
       src={sponsor.logo.url}
       alt={sponsor.name}
       sizes="100vw"
