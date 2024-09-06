@@ -12,8 +12,8 @@ export default async function SponsorList() {
         <h1 className="w-full text-center text-2xl sm:text-4xl font-bold text-gray-500">
           The Leeds Digital Health Committee
         </h1>
-        <div className="w-full flex justify-center mt-16 m-5">
-          <ul className="list-none w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="w-full flex justify-center mt-16 m-2">
+          <ul className="list-none grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {sponsors.map(buildSponsorElement)}
           </ul>
         </div>
