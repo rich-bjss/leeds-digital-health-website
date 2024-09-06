@@ -27,6 +27,9 @@ Create a `.env.local` file following the example file `.env.local.example`, foun
 
 Copy the access tokens into `.env.local`.
 
+### Configuring Contact Us email address
+The website has a Contact Us page, which sends it's data by email to a given email address. You can change the address in .env.local, with the variable CONTACT_US_EMAIL_ADDRESS
+
 ## Unit Tests
 
 These are currently in a partially-complete state. Note that [due to limitations](https://github.com/vercel/next.js/issues/47131#issuecomment-1487739447) [with react-testing-library](https://github.com/testing-library/react-testing-library/issues/1209) it may currently not be possible to properly test the Suspense components, but by refactoring the async child components into separate files (or possibly just `export`ing them), they can be individually tested using the function provided in `@/__tests__/test-helper.ts`
