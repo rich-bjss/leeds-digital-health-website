@@ -28,7 +28,7 @@ function buildSponsorElement(sponsor: Sponsor) {
       <a href={sponsor.href ?? undefined}>
         <div className="rounded shadow-lg p-4  border border-gray-100 flex flex-col h-full">
           {buildImageElement(sponsor)}
-          { sponsor?.description && <p className="p-2">{sponsor.description}</p> }
+          {sponsor?.description && <p className="p-2">{sponsor.description}</p>}
         </div>
       </a>
     </li>
@@ -38,7 +38,7 @@ function buildSponsorElement(sponsor: Sponsor) {
 function buildImageElement(sponsor: Sponsor) {
   return (
     <Image
-      className="mx-auto"
+      className="mx-auto cursor-pointer"
       src={sponsor.logo.url}
       alt={sponsor.name}
       sizes="100vw"
