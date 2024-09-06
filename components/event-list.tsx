@@ -46,7 +46,7 @@ async function DisplayEvents({
   state
 }: {
   forFooter?: boolean,
-  state: EventListState 
+  state: EventListState
 }) {
   // todo add a proper catch for this
   let previousEvents = await getEventsByState(state);
@@ -96,7 +96,7 @@ export default async function EventList({
     <div className="bg-navy text-white" id="events">
       <div className="container grid grid-cols-1 mx-auto py-8">
         <h2 className="text-4xl font-bold mb-8 text-pink text-center sm:text-left">
-          { getTitleByState(state) }
+          {getTitleByState(state)}
         </h2>
         <Suspense fallback={<LoadingMessage>Loading events...</LoadingMessage>}>
           <DisplayEvents forFooter={forFooter} state={state} />

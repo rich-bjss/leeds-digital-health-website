@@ -11,7 +11,7 @@ function FooterText() {
     )
 }
 
-export default function Footer({state, showEventList}: {state?: EventListState, showEventList?: boolean}){
+export default function Footer({ state, showEventList }: { state?: EventListState, showEventList?: boolean }) {
     if (state == undefined) {
         state = "upcoming"
     }
@@ -21,8 +21,8 @@ export default function Footer({state, showEventList}: {state?: EventListState, 
     if (showEventList) {
         return (
             <>
-            <FooterText />
-            <EventList forFooter state={state} />
+                <FooterText />
+                <EventList forFooter state={state} />
             </>
         )
     } else {
