@@ -1,7 +1,7 @@
 export default interface Sponsor {
   name: string
   href: string
-  description: string
+  youtubeLink: string
   logo: {
     url: string
     description: string

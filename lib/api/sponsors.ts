@@ -6,7 +6,7 @@ const sponsorQuery = `query {
         items {
           name
           href
-          description
+          youtubeLink
           logo {
                 url
                 description
