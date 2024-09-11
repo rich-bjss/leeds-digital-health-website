@@ -10,6 +10,7 @@ import Event from "@/lib/model/event"
 export default function HeadlineEvent({ event }: { event: Event }) {
   return (
     <>
+      {event.image && 
       <div className="w-full flex justify-center align-top relative">
         <Image
           src={event.image.url}
@@ -19,7 +20,7 @@ export default function HeadlineEvent({ event }: { event: Event }) {
           width={500}
           height={300}
         />
-      </div>
+      </div>}
       <div className="container mx-auto">
         <div className="flex align-middle py-8">
           <div className="align-middle h-max mr-6">
