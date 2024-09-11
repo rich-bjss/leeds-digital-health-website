@@ -1,7 +1,9 @@
 "use client";
+import { useRouter } from "next/navigation";
 import {MouseEvent, useState} from "react"
 
 function ContactUsForm() {
+    const router = useRouter();
     const [email, setEmail] = useState('');
     const [content, setContent] = useState('');
 
@@ -21,6 +23,7 @@ function ContactUsForm() {
                 })
             })
             .then(res => console.log("Response received!" + JSON.stringify(res)))
+            .then(res => router.push("/contact-us-successful"))
             .catch(e => console.log(e))
         }
     }
