@@ -14,6 +14,7 @@ import Event from "@/lib/model/event"
 import { cn, dark } from "@/lib/tailwind-helper"
 import { getEvent } from "@/lib/api/events"
 import { isFuture } from "../ui-elements/date-component"
+import Carousel from "../ui-elements/carousel"
 
 async function DisplayEvent({ slug }: { slug: string }) {
   const { event }: { event: Event } = await getEvent(slug)
@@ -68,6 +69,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
       <div className="px-1 sm:px-8">
         <Talks talkList={event.talksCollection.items} />
       </div>
+      <Carousel images={["foo"]} / >
       {displayMeetupButton && (
         <div className="flex justify-center pt-8">
           <LinkButton

@@ -14,7 +14,7 @@ export default async function SponsorList() {
         </h1>
         <div className="w-full flex flex-col items-center mt-16 m-2">
           <ul className="list-none flex flex-wrap justify-center gap-8">
-            {sponsors.filter(s => {console.log(s); return s.youtubeLink}).map(buildSponsorYoutubeEmbed)}
+            {sponsors.filter(s => s.youtubeLink ).map(buildSponsorYoutubeEmbed)}
           </ul>
           <ul className="list-none grid grid-cols-1 justify-items-center sm:grid-cols-2 md:grid-cols-3 gap-8">
             {sponsors.map(buildSponsorElement)}
@@ -31,7 +31,7 @@ function buildSponsorYoutubeEmbed(sponsor: Sponsor) {
       <iframe 
       width={560 * 0.8} 
       height={315 * 0.8} 
-      src={sponsor.youtubeLink}  // https://www.youtube.com/embed/MgcIcnpqRew?si=FEEpv0o5UJ6JREM7
+      src={sponsor.youtubeLink}
       title={sponsor.name}
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
       referrerPolicy="strict-origin-when-cross-origin" 

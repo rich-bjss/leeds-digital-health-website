@@ -8,7 +8,7 @@ import { getExternalNewsPosts, getNewsPosts } from "@/lib/api/posts"
 
 async function DisplayNews() {
   const posts = await getNewsPosts()
-  const externalPosts = await getExternalNewsPosts()
+  // const externalPosts = await getExternalNewsPosts() // this is unused and should probably be pruned
 
   if (!posts || posts.length === 0)
     return (

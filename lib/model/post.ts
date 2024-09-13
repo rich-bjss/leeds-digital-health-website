@@ -6,6 +6,7 @@ export default interface Post {
     slug: string
     excerpt: string
     coverImage: { url: string }
+    gallery: any // todo set this properly
     date: string
     author: Author
     type: string
