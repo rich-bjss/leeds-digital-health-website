@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Carousel({ images }: { images: any[] }): any {
     const [currentImage, setCurrentImage] = useState(1);
@@ -36,7 +37,7 @@ export default function Carousel({ images }: { images: any[] }): any {
         let MakeCarouselImage = (image: any, index: number) => {
             return (
                 <div key={index}>
-                    <img src={image} className="h-[40rem]" ></img>
+                    <Image alt={"image"} src={image} className="h-[40rem]" />
                 </div>
             )
         }

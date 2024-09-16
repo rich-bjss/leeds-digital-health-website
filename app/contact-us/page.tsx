@@ -7,7 +7,7 @@ function ContactUsForm() {
     const [email, setEmail] = useState('');
     const [content, setContent] = useState('');
 
-    function handleForm(e: MouseEvent<HTMLInputElement, MouseEvent>) {
+    function handleForm(e: any) {
         e.preventDefault();
         if (email && content) { // should be enforced by the "required" fields
             console.log("Sending...");
