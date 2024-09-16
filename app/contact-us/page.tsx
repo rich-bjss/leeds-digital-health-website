@@ -48,7 +48,7 @@ function ContactUsForm() {
                     rows={4} />
             </div>
             <div className="bg-navy p-3 mx-auto">
-                <input className="bg-pink rounded text-white p-4 cursor-pointer font-bold"
+                <input className="bg-pink rounded text-white p-2 cursor-pointer font-bold"
                     type="submit"
                     onClick={e => handleForm(e)}
                     value="Submit" />
