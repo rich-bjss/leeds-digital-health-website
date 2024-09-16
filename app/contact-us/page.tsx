@@ -61,7 +61,7 @@ export default function ContactUsFormPage() {
     return (
         <div className="w-full bg-navy">
             <div className="container mx-auto px-10">
-                <p className="text-white text-center text-lg p-4">Have a query? Please let us know using the form below, or <a className="bg-pink text-white font-bold p-2 rounded" href="https://www.linkedin.com/groups/12736111/">Contact us on LinkedIn</a></p>
+                <p className="text-white text-center p-4">Have a query? Please let us know using the form below, or <a className="bg-pink text-white font-bold p-2 rounded" href="https://www.linkedin.com/groups/12736111/">Contact us on LinkedIn</a></p>
                 <ContactUsForm />
             </div>
         </div>
