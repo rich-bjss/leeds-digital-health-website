@@ -7,7 +7,7 @@ export default function Carousel({ images }: { images: any[] }): any {
     if (images == undefined) {
         return null
     } else {
-        let tempImages = ["/roundtable1.jpg", "/roundtable1.jpg", "/roundtable1.jpg"];
+        let tempImages = ["/roundtable1.jpg", "/logo.png", "/roundtable1.jpg"];
         //carouselImages = images.map(MakeCarouselImage);
 
         let showSlide = (index: number) => {
@@ -15,10 +15,28 @@ export default function Carousel({ images }: { images: any[] }): any {
             console.log("Clicked element" + index)
         }
 
+        let prevSlide = () => {
+            if (currentImage == 0) {
+                //setCurrentImage(images.length - 1);
+                setCurrentImage(tempImages.length - 1);
+            } else {
+                setCurrentImage(currentImage - 1);
+            }
+        }
+
+        let nextSlide = () => {
+            //if (currentImage == images.length - 1) {
+            if (currentImage == tempImages.length - 1) {
+                setCurrentImage(0);
+            } else {
+                setCurrentImage(currentImage + 1);
+            }
+        }
+
         let MakeCarouselImage = (image: any, index: number) => {
             return (
                 <div key={index}>
-                    <img src={image} className="w-full" ></img>
+                    <img src={image} className="h-[48rem]" ></img>
                 </div>
             )
         }
@@ -36,11 +54,12 @@ export default function Carousel({ images }: { images: any[] }): any {
         carouselImages = tempImages.map(MakeCarouselImage);
 
         return (
-            <div className="p-5">
-                <div>
+            <div className="p-5 flex flex-col items-center">
+                <div className="">
                     {carouselImages[currentImage]}
                 </div>
                 <div className="flex justify-center">
+                    {/*images.map(MakeCarouselButton)*/}
                     {[tempImages, tempImages, tempImages].map(MakeCarouselButton)}
                 </div>
             </div>
