@@ -3,6 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
+// Images are supposed to come from Contentful.
+// Get the URL for the gallery contents, and then use Contentful to crop the images to make them the same aspect ratio
+// Otherwise the carousel is a pain to display properly
+
 export default function Carousel({ images }: { images: any[] }): any {
     const [currentImage, setCurrentImage] = useState(1);
     if (images == undefined) {
@@ -37,7 +41,7 @@ export default function Carousel({ images }: { images: any[] }): any {
         let MakeCarouselImage = (image: any, index: number) => {
             return (
                 <div key={index}>
-                    <Image alt={"image"} src={image} className="h-[40rem]" />
+                    <Image alt={"image"} src={image} width={500} height={500} className="h-[40rem]" /> // 500 is a placeholder, get size from Contentful
                 </div>
             )
         }
