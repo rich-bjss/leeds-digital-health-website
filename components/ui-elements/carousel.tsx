@@ -36,7 +36,7 @@ export default function Carousel({ images }: { images: any[] }): any {
         let MakeCarouselImage = (image: any, index: number) => {
             return (
                 <div key={index}>
-                    <img src={image} className="h-[48rem]" ></img>
+                    <img src={image} className="h-[40rem]" ></img>
                 </div>
             )
         }
