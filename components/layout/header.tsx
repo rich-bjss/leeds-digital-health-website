@@ -48,9 +48,6 @@ export default function Header() {
             <NavLink href="/all-events">Events</NavLink>
           </li>
           <li className="inline-block px-1">
-            <NavLink href="/news">News</NavLink>
-          </li>
-          <li className="inline-block px-1">
             <NavLink href="/committee">LDH Committee</NavLink>
           </li>
           <li className="inline-block px-1">
