@@ -57,7 +57,6 @@ async function DisplayEvents({
     previousEvents = previousEvents.slice(0, 3)
   }
 
-  console.log(previousEvents);
   return (
     <>
       {previousEvents.map((event) => (
