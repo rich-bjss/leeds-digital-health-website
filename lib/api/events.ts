@@ -8,6 +8,10 @@ const EVENT_LIST_GRAPHQL_FIELDS = `
   description
   date
   slug
+  image {
+    description
+    url
+  }
 `
 
 const EVENT_GRAPHQL_FIELDS = `

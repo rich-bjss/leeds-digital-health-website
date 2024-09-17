@@ -4,6 +4,8 @@ import Link from "next/link"
 import { format } from "date-fns"
 import Event from "../lib/model/event"
 
+import Image from "next/image"
+
 import LoadingMessage from "./ui-elements/loading-message"
 
 import { getPreviousEvents, getUpcomingEvents, getAllEvents } from "@/lib/api/events"
@@ -55,25 +57,31 @@ async function DisplayEvents({
     previousEvents = previousEvents.slice(0, 3)
   }
 
+  console.log(previousEvents);
   return (
     <>
       {previousEvents.map((event) => (
         <div
           key={event.slug}
-          className="border border-pink rounded p-4 pb-8 mb-4 mx-4"
+          className="border border-pink rounded p-4 pb-8 mb-4 mx-4 flex justify-between"
         >
-          <h3 className="text-xl font-bold">
-            <p>{format(new Date(event.date), "do MMMM y")}</p>
-          </h3>
-          <div className="mb-8">
-            <p>{event.title}</p>
+          <div>
+            <h3 className="text-xl font-bold">
+              <p>{format(new Date(event.date), "do MMMM y")}</p>
+            </h3>
+            <div className="mb-8">
+              <p>{event.title}</p>
+            </div>
+            <Link
+              href={`/events/${event.slug}`}
+              className="bg-pink p-4 top-0 rounded"
+            >
+              Details here
+            </Link>
           </div>
-          <Link
-            href={`/events/${event.slug}`}
-            className="bg-pink p-4 top-0 rounded"
-          >
-            Details here
-          </Link>
+          {event?.image?.url && <div>
+            <Image alt={event.image.description || ""} src={`${event.image.url}?w=400&h=300`} width={200} height={150} />
+          </div>}
         </div>
       ))}
       {forFooter && (
