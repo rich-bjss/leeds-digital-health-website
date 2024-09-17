@@ -69,7 +69,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
       <div className="px-1 sm:px-8">
         <Talks talkList={event.talksCollection.items} />
       </div>
-      <Carousel images={["foo"]} / >
+      {/*<Carousel images={["foo"]} / >*/}
       {displayMeetupButton && (
         <div className="flex justify-center pt-8">
           <LinkButton
