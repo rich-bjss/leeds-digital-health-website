@@ -14,7 +14,7 @@ export default function HeadlineEvent({ event }: { event: Event }) {
       <div className="w-full flex justify-center align-top relative">
         <Image
           src={event.image.url}
-          alt={event.image.description}
+          alt={event.image.description || ""}
           sizes="100vw"
           style={{ objectFit: "contain", width: "100%", height: "auto" }}
           width={500}

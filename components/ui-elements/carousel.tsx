@@ -5,13 +5,12 @@ import Image from "next/image";
 import { default as ImageType } from "../../lib/model/image"
 
 export default function Carousel({ images }: { images: ImageType[] }) {
+    const [currentImage, setCurrentImage] = useState(0);
     if (images.length == 0) {
         return (
             <></>
         )
     } else {
-        const [currentImage, setCurrentImage] = useState(0);
-
         const MakeCarouselImage = (image: ImageType, index: number) => {
             return (
                 <div key={index}>
