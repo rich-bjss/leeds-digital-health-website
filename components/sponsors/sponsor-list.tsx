@@ -12,7 +12,7 @@ export default async function SponsorList() {
         <h1 className="w-full text-center text-2xl sm:text-4xl font-bold text-gray-500">
           The Leeds Digital Health Committee
         </h1>
-        <div className="w-full flex flex-col items-center mt-16 m-2">
+        <div className="w-full flex flex-col items-center mt-8 gap-8">
           <ul className="list-none flex flex-wrap justify-center gap-8">
             {sponsors.filter(s => s.youtubeLink ).map(buildSponsorYoutubeEmbed)}
           </ul>
@@ -34,7 +34,7 @@ function buildSponsorYoutubeEmbed(sponsor: Sponsor) {
       src={sponsor.youtubeLink}
       title={sponsor.name}
       allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      referrerPolicy="strict-origin-when-cross-origin" 
+      referrerPolicy="no-referrer" 
       allowFullScreen>
       </iframe>
     </li>
