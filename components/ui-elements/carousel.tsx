@@ -41,7 +41,7 @@ export default function Carousel({ images }: { images: any[] }): any {
         let MakeCarouselImage = (image: any, index: number) => {
             return (
                 <div key={index}>
-                    <Image alt={"image"} src={image} width={500} height={500} className="h-[40rem]" /> // 500 is a placeholder, get size from Contentful
+                    <Image alt={"image"} src={image} width={500} height={500} className="h-[40rem]" />
                 </div>
             )
         }
