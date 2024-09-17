@@ -10,12 +10,12 @@ export default function Carousel({ images }: { images: ImageType[] }) {
             <></>
         )
     } else {
-        const [currentImage, setCurrentImage] = useState(1);
+        const [currentImage, setCurrentImage] = useState(0);
 
         const MakeCarouselImage = (image: ImageType, index: number) => {
             return (
                 <div key={index}>
-                    <Image alt={image.description || ""} src={image.url} width={image.width} height={image.height} className="h-[40rem]" />
+                    <Image alt={image.description || ""} src={image.url} width={image.width} height={image.height} />
                 </div>
             )
         }
@@ -24,7 +24,6 @@ export default function Carousel({ images }: { images: ImageType[] }) {
 
         let showSlide = (index: number) => {
             setCurrentImage(index);
-            console.log("Clicked element" + index)
         }
 
         let MakeCarouselButton = (image: any, index: number) => {
@@ -33,7 +32,7 @@ export default function Carousel({ images }: { images: ImageType[] }) {
                     type="button"
                     value={index + 1}
                     onClick={e => showSlide(index)}
-                    className="p-2 border my-3 mx-1" />
+                    className="p-2 border my-3 mx-1 w-7" />
             )
         }
 
@@ -43,7 +42,6 @@ export default function Carousel({ images }: { images: ImageType[] }) {
                     {carouselImages[currentImage]}
                 </div>
                 <div className="flex justify-center">
-                    {/*images.map(MakeCarouselButton)*/}
                     {carouselImages.map(MakeCarouselButton)}
                 </div>
             </div>
