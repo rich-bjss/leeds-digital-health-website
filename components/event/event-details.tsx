@@ -18,6 +18,7 @@ import Carousel from "../ui-elements/carousel"
 
 async function DisplayEvent({ slug }: { slug: string }) {
   const { event }: { event: Event } = await getEvent(slug)
+  console.log(event.galleryCollection);
 
   if (!event) {
     return <p>No event found</p>
@@ -69,7 +70,7 @@ async function DisplayEvent({ slug }: { slug: string }) {
       <div className="px-1 sm:px-8">
         <Talks talkList={event.talksCollection.items} />
       </div>
-      {/*<Carousel images={["foo"]} / >*/}
+      <Carousel images={event.galleryCollection.items} / >
       {displayMeetupButton && (
         <div className="flex justify-center pt-8">
           <LinkButton

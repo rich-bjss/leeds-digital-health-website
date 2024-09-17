@@ -28,6 +28,14 @@ const EVENT_GRAPHQL_FIELDS = `
     description
     url
   }
+  galleryCollection(limit: 10) {
+    items {
+      description
+      url
+      width
+      height
+    }
+  }
   talksCollection(limit: 5) {
     items {
       title

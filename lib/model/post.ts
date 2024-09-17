@@ -1,12 +1,13 @@
 import Author from "./author"
+import Image from "./image"
 
 export default interface Post {
     key: string
     title: string
     slug: string
     excerpt: string
-    coverImage: { url: string }
-    gallery: any // todo set this properly
+    coverImage: Image
+    galleryCollection: { items: Image[] } 
     date: string
     author: Author
     type: string

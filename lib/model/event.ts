@@ -1,4 +1,5 @@
 import Talk from "./talk"
+import Image from "./image"
 
 export default interface Event {
   key: string
@@ -6,8 +7,8 @@ export default interface Event {
   description: string
   date: string
   talksCollection: { items: Talk[] }
-  image: { description: string; url: string }
-  gallery: any // todo set this properly
+  image: Image 
+  galleryCollection: { items: Image[] } 
   video: { title: string; description: string; url: string }
   slug: string
   meetupEventId: string
