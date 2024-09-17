@@ -18,7 +18,6 @@ import Carousel from "../ui-elements/carousel"
 
 async function DisplayEvent({ slug }: { slug: string }) {
   const { event }: { event: Event } = await getEvent(slug)
-  console.log(event.galleryCollection);
 
   if (!event) {
     return <p>No event found</p>

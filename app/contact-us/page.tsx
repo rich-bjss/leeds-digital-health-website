@@ -10,7 +10,6 @@ function ContactUsForm() {
     function handleForm(e: any) {
         e.preventDefault();
         if (email && content) { // should be enforced by the "required" fields
-            console.log("Sending...");
             fetch('/api/contact', {
                 method: "POST",
                 headers: {
@@ -22,7 +21,6 @@ function ContactUsForm() {
                     content
                 })
             })
-            .then(res => console.log("Response received!" + JSON.stringify(res)))
             .then(res => router.push("/contact-us-successful"))
             .catch(e => console.log(e))
         }

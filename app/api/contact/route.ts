@@ -2,7 +2,6 @@ import { ContactUsMessage, sendEmail } from "@/lib/api/email"
 
 export async function POST(req: Request) {
     let input: ContactUsMessage = await req.json();
-    console.log(input);
 
     if (process.env.EMAIL_ACTUALLY_SEND_THEM == "true") {
         let e = sendEmail(input)

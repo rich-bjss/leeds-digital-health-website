@@ -41,9 +41,11 @@ export default function Carousel({ images }: { images: ImageType[] }) {
                 <div className="">
                     {carouselImages[currentImage]}
                 </div>
-                <div className="flex justify-center">
-                    {carouselImages.map(MakeCarouselButton)}
-                </div>
+                {carouselImages.length > 1 &&
+                    <div className="flex justify-center">
+                        {carouselImages.map(MakeCarouselButton)}
+                    </div>
+                }
             </div>
         )
     }
