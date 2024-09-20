@@ -18,10 +18,10 @@ export default {
       },
       a: {
         textDecoration: "none",
-        color: "#041E42",
+        color: "#D90699",
         fontWeight: "bold",
         "&:hover": {
-          color: "#041E42",
+          color: "#D90699",
           textDecoration: "none",
           fontWeight: "bold"
         }
@@ -34,10 +34,26 @@ export default {
         },
         navy: {
           DEFAULT: "#041E42"
+        },
+        gray: {
+          50: "#f9fafc"  
         }
       },
       fontFamily: {
         sans: ["var(--font-inter)"]
+      },
+      keyframes: {
+        loading: {
+          '0%': {
+            color: '#F490B6'
+          },
+          '50%': {
+            color: '#FCE7F3 '
+          },
+          '100%': {
+            color: '#F490B6 '
+          }
+        }
       }
     }
   },

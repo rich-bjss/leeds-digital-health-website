@@ -1,4 +1,4 @@
-import ContentfulImage from '@/lib/contentful-image'
+import ContentfulImage from '@/components/ui-elements/contentful-image'
 
 export default function Avatar({
   name,

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SponsorList component includes the correct title: The Leeds Digital Health Committee 1`] = `
+<h1
+  class="w-full text-center text-2xl sm:text-4xl font-bold text-gray-500"
+>
+  The Leeds Digital Health Committee
+</h1>
+`;

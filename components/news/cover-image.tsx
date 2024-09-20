@@ -1,4 +1,4 @@
-import ContentfulImage from '../lib/contentful-image'
+import ContentfulImage from '../ui-elements/contentful-image'
 import Link from 'next/link'
 
 function cn(...classes: any[]) {
